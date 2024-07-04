@@ -4,7 +4,7 @@ import { FaBell, FaShoppingCart } from 'react-icons/fa';
 const PrimaryNavbar = () => {
     return (
         <div className='h-[50px] p-5 flex flex-row items-center justify-between text-black bg-sky-50 text-sm'>
-                <a href="/">Hi! Sign In</a>
+                <a href="/">Hey! Sign In</a>
                 <a href="/">Register</a>
                 <a href="/" className='hover:text-red-300'>Daily deals</a>
                 <a href="/" className='hover:text-red-300'>Help & Contact</a>
