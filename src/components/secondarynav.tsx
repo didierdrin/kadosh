@@ -4,7 +4,7 @@ import CategoryDropdown from "./categorydropdown";
 const SecondaryNavbar = () => {
     return (
         <div className='flex flex-row items-center justify-between px-5 h-[80px] bg-blue-50 text-black text-[15px]'>
-            <a href="/" className="text-yellow-900 text-[35px] font-bold">Kadosh</a>
+            <a href="/" className="text-black text-[35px] font-bold">Kadosh</a>
             <div className="flex flex-row items-center">
             <CategoryDropdown />
             <div className="relative mx-8">
