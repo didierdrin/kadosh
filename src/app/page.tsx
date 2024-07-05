@@ -1,11 +1,16 @@
+// home page
 import Image from "next/image";
+// importing page contents
+import Allproducts from "@/components/allproducts";
+import Explorecategories from "@/components/explorecategories";
+import Browse from '@/components/browse';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <hr />
-      <p>Home main page </p>
-      <p className="py-20">Choose among this | The site is underconstruction.</p>
+    <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <Allproducts />
+      <Explorecategories />
+      <Browse />
     </main>
   );
 }

@@ -1,3 +1,16 @@
+Main color theme: 
+_______________
+text-blue-500
+text-sky-300
+text-teal-500
+text-black
+text-orange-200
+___________
+Instant checkout button
+Checkout from Cart
+Watchlist
+Items in Cart are indicated
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -10,7 +10,7 @@ import SlideshowNavbar from "@/components/slideshownav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kadosh",
+  title: "Kadosh - Rwanda's best electronics shop",
   description: "Best computer shop in Rwanda",
 };
 
