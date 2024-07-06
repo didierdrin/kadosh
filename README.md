@@ -1,3 +1,7 @@
+Hover scale animation:
+_____________________
+Tailwindcss: hover:-translate-y-1 on the card elements not just where they are inherited. 
+
 Main color theme: 
 _______________
 text-blue-500

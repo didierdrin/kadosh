@@ -1,14 +1,21 @@
 // Slideshow navbar
+'use client';
 import React from 'react'; 
+import { useRouter } from "next/navigation";
 
 export default function SlideshowNavbar () {
+  const router = useRouter();
+
+  const HandleShopNowBtn = () => {
+    router.push("/seeall");
+  }
     return (
 
         <div className="flex flex-col md:flex-row h-auto w-full p-6 mt-5 justify-around items-center bg-green-100 space-y-6 md:space-y-0 md:space-x-6">
   <div className='flex flex-col items-center md:items-start text-center md:text-left'>
     <h2 className='font-semibold text-xl'>Everything you<br />need with just a click</h2>
     <a href="/" className='my-2'>Get your computer <br />accessories in a bit</a>
-    <button className="rounded p-2 my-3 bg-black text-white hover:text-teal-500">Shop now</button>
+    <button onClick={HandleShopNowBtn} className="rounded p-2 my-3 bg-black text-white hover:text-teal-500">Shop now</button>
   </div>
   
   <div className='flex flex-col items-center'>

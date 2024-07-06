@@ -5,7 +5,6 @@ import "./globals.css";
 import PrimaryNavbar from "@/components/primarynav";
 import SecondaryNavbar from "@/components/secondarynav";
 import FooterNavbar from "@/components/footernav";
-import SlideshowNavbar from "@/components/slideshownav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +24,6 @@ export default function RootLayout({
         <PrimaryNavbar />
         <hr />
         <SecondaryNavbar />
-        <SlideshowNavbar />
         {children}
         <FooterNavbar />
         </body>
