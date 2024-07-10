@@ -21,16 +21,14 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AuthProvider>
-          <PrimaryNavbar />
-          <hr />
-          <SecondaryNavbar />
-          {children}
-          <FooterNavbar />
-        </AuthProvider>
-      </body>
-    </html>
+    <div className={inter.className}>
+      <AuthProvider>
+        <PrimaryNavbar />
+        <hr />
+        <SecondaryNavbar />
+        {children}
+        <FooterNavbar />
+      </AuthProvider>
+    </div>
   );
 }

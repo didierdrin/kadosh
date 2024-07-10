@@ -1,8 +1,9 @@
 // components/DropdownPlain.tsx (Menu component)
-import React, { useState } from 'react';
-import Link  from "next/link";
+import React, { useState } from "react";
+import Link from "next/link";
 
 interface MenuItem {
+  id: number;
   title: string;
   route: string;
 }
@@ -18,7 +19,7 @@ const Menu: React.FC<Props> = ({ item }) => {
     setIsOpen((prev) => !prev);
   };
 
-  const transClass = isOpen ? 'flex' : 'hidden';
+  const transClass = isOpen ? "flex" : "hidden";
 
   return (
     <div className="relative">
@@ -60,15 +61,16 @@ const Menu: React.FC<Props> = ({ item }) => {
       {/* Dropdown menu */}
       <div
         className={`absolute top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-gray-200 rounded-md ${transClass}`}
-      style={{ right:0}}>
+        style={{ right: 0 }}
+      >
         {item.map((menuItem) => (
-          <Link key={menuItem.route} href={menuItem.route} legacyBehavior>
-            <a
-              className="hover:bg-gray-300 hover:text-gray-600 px-4 py-1"
-              onClick={toggleDropdown}
-            >
-              {menuItem.title}
-            </a>
+          <Link
+            key={menuItem.id}
+            href={menuItem.route}
+            className="hover:bg-gray-300 hover:text-gray-600 px-4 py-1"
+            onClick={toggleDropdown}
+          >
+            {menuItem.title}
           </Link>
         ))}
       </div>

@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc, collection } from 'firebase/firestore';
-import { auth } from '../../firebaseConfig';
 
 interface Product {
     id?: number;

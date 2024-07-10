@@ -1,11 +1,11 @@
 // Secondary Navbar
-'use client';
+"use client";
 import CategoryDropdown from "./categorydropdown";
 import Menu from "./menudropdown";
 
 const SecondaryNavbar = () => {
   return (
-    <div className="flex flex-row items-center justify-between px-5 h-[80px] bg-blue-50 text-black text-[15px]">
+    <span className="flex flex-row items-center justify-between px-5 h-[80px] bg-blue-50 text-black text-[15px]">
       <a href="/home" className="text-black text-[35px] font-bold">
         Kadosh
       </a>
@@ -38,9 +38,14 @@ const SecondaryNavbar = () => {
       <div className="hidden sm:block"></div>
       {/* Hamburger menu icon */}
       <div className="block sm:hidden">
-          <Menu item={[{title: "Cart", route: "/"}, {title: "Profile", route: "/"}]} />
-        </div>
-    </div>
+        <Menu
+          item={[
+            { id: 1, title: "Cart", route: "/" },
+            { id: 2, title: "Profile", route: "/" },
+          ]}
+        />
+      </div>
+    </span>
   );
 };
 

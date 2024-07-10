@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Inter } from "next/font/google";
-import { Metadata } from 'next';
-import '../globals.css';
+import { Metadata } from "next";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,15 +13,11 @@ export const metadata: Metadata = {
 export default function AuthLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <main className="min-h-screen flex items-center justify-center">
-          {children}
-        </main>
-      </body>
-    </html>
-  )
+    <main className="min-h-screen flex items-center justify-center">
+      {children}
+    </main>
+  );
 }

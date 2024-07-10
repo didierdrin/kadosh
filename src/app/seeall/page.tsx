@@ -70,8 +70,12 @@ export default function Seeall() {
       <div className='w-full p-4 sm:w-3/4'>
         <h1 className="text-2xl font-bold mb-6">All Products</h1>
         {products.map(product => (
-          <Link href={`/product?id=${product.id}&data=${encodeURIComponent(JSON.stringify(product))}`} className="block">
-          <ListTile key={product.id} product={product} />
+          <Link 
+            key={product.id} 
+            href={`/product?id=${product.id}&data=${encodeURIComponent(JSON.stringify(product))}`} 
+            className="block"
+          >
+            <ListTile product={product} />
           </Link>
         ))}
       </div>
