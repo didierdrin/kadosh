@@ -31,22 +31,26 @@ export default function Allproducts() {
       {/* Products list */}
       <div className="flex flex-col sm:flex-row mt-3 space-y-4 sm:space-y-0 sm:space-x-4">
         <div className="flex flex-wrap justify-center gap-4">
-          {products.map((product, index) => (
-            <Link
-              key={product.id || `product-${index}`}
-              href={`/product?id=${product.id}&data=${encodeURIComponent(
-                JSON.stringify(product)
-              )}`}
-              className="block"
-            >
-              <Productcard
-                imgUrl={product.img}
-                productName={product.name}
-                productPrice={product.price}
-                discountPercentage={null} // Add discount logic if needed
-              />
-            </Link>
-          ))}
+          {products && products.length > 0 ? (
+            products.map((product, index) => (
+              <Link
+                key={product.id || `product-${index}`}
+                href={`/product?id=${product.id}&data=${encodeURIComponent(
+                  JSON.stringify(product)
+                )}`}
+                className="block"
+              >
+                <Productcard
+                  imgUrl={product.img}
+                  productName={product.name}
+                  productPrice={product.price}
+                  discountPercentage={null}
+                />
+              </Link>
+            ))
+          ) : (
+            <div>No products available</div>
+          )}
         </div>
       </div>
     </div>

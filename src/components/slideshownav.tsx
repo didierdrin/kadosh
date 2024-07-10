@@ -7,7 +7,9 @@ export default function SlideshowNavbar () {
   const router = useRouter();
 
   const HandleShopNowBtn = () => {
-    router.push("/seeall");
+    if (router) {
+      router.push("/seeall");
+    }
   }
     return (
 
