@@ -1,6 +1,9 @@
 // see all - navigation route
+'use client';
 import React from 'react';
 import Link from 'next/link';
+// Firebase Firestore Data hook
+import { useProducts } from '@/components/useproducts';
 
 // ListTile component for individual products
 const ListTile = ({ product }: any) => {
@@ -18,11 +21,11 @@ const ListTile = ({ product }: any) => {
 
   return (
     <div className="border rounded-lg p-4 mb-4 flex items-center hover:-translate-y-1 cursor-pointer">
-      <img src={product.image} alt={product.name} className="w-24 h-24 object-cover mr-4" />
+      <img src={product.img} alt={product.name} className="w-24 h-24 object-cover mr-4" />
       <div>
         <h3 className="text-lg font-semibold">{product.name}</h3>
         <p className="text-gray-600">RWF{commafy(product.price.toFixed(2))}</p>
-        <p className="text-sm text-gray-500">{product.description}</p>
+        <p className="text-sm text-gray-500">{product.details}</p>
       </div>
     </div>
   );
@@ -31,11 +34,17 @@ const ListTile = ({ product }: any) => {
 // Main Seeall component
 export default function Seeall() {
   // Sample product data
+  /*
   const products = [
     { id: 1, name: "Apple iTouch", price: 19990, description: "Description for Product 1", image: "https://res.cloudinary.com/dezvucnpl/image/upload/v1720272875/katlyn-luz-ZreKkcuqMU8-unsplash_vaxrq2.jpg" },
     { id: 2, name: "2.4G Wireless Keyboard", price: 29000, description: "Description for Product 2", image: "https://res.cloudinary.com/dezvucnpl/image/upload/v1720272880/bryan-natanael-hR8l1s4u8QE-unsplash_on46hy.jpg" },
     { id: 3, name: "USB C-cable", price: 4000, description: "Description for Product 3", image: "https://res.cloudinary.com/dezvucnpl/image/upload/v1720272910/maxence-pira-OJJhibC7cEM-unsplash_gg3q0n.jpg" },
-  ];
+  ]; */
+  const { products, loading, error } = useProducts();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
 
   // Sample categories for sidebar
   const categories = ["All", "Laptops", "Desktops", "Electronics", "Accessories"];
@@ -61,7 +70,9 @@ export default function Seeall() {
       <div className='w-full p-4 sm:w-3/4'>
         <h1 className="text-2xl font-bold mb-6">All Products</h1>
         {products.map(product => (
+          <Link href={`/product?id=${product.id}&data=${encodeURIComponent(JSON.stringify(product))}`} className="block">
           <ListTile key={product.id} product={product} />
+          </Link>
         ))}
       </div>
     </div>

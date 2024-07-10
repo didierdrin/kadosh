@@ -1,7 +1,11 @@
 // Footer navbar
+'use client';
 import React from 'react';
+// AuthProvider, useAuth
+import { useAuth } from './authprovider';
 
 export default function FooterNavbar() {
+    const { logout } = useAuth();
     return (
       <footer className="bg-gradient-to-b from-teal-100 via-slate-100 to-slate-50 p-4 sm:p-6 lg:p-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-sm sm:text-base">
@@ -12,6 +16,31 @@ export default function FooterNavbar() {
                   <li><a href="/" className="hover:underline">Kadosh Refund Policy</a></li>
                   <li><a href="/" className="hover:underline">Bidding & buying help</a></li>
                   <li><a href="/" className="hover:underline">Stores</a></li>
+                  <li><hr /></li>
+                  <li><a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            logout();
+          }}
+          className="flex items-center float-b mt-10 space-x-2 hover:text-red-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+          <span>Logout</span>
+        </a></li>
               </ul>
           </div>
           <div>
