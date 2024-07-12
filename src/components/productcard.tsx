@@ -25,7 +25,7 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
                 <h3 className='text-lg font-semibold text-gray-800 mb-2 truncate'>{productName}</h3>
                 <div className='flex justify-between items-center'>
                     <p className='text-xl font-bold text-indigo-600'>{formattedPrice}</p>
-                    <button className='bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors duration-300'>
+                    <button className='bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-black transition-colors duration-300'>
                     <FaShoppingCart className='text-lg hover:text-teal-100' />
                     </button>
                 </div>

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Link from "next/link";
+import { FaShoppingCart } from 'react-icons/fa';
 
 const DynamicProductDetails = dynamic(() => import('./productdetails'), {
   ssr: false,
@@ -15,7 +16,12 @@ export default function ProductPage() {
       >
         &larr; Back to products
       </Link>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
+      <div className="animate-pulse">
+        <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
+      </div>
+      <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
+    </div>}>
         <DynamicProductDetails />
       </Suspense>
     </div>

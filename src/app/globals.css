@@ -32,3 +32,16 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes cartScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-cart-scale {
+  animation: cartScale 1.5s ease-in-out infinite;
+}

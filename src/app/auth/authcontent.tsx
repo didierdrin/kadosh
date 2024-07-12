@@ -40,10 +40,10 @@ export default function AuthContent() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Login/Sign up section */}
-  <div className='w-1/2 bg-white p-12 flex flex-col justify-center'>
-    <h2 className="text-3xl font-semibold mb-8">{isLogin ? 'Welcome!' : 'Create Account'}</h2>
+    <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+  {/* Login/Sign up section */}
+  <div className='w-full md:w-1/2 bg-white p-6 md:p-12 flex flex-col justify-center'>
+    <h2 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-8">{isLogin ? 'Welcome!' : 'Create Account'}</h2>
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <div>
@@ -86,7 +86,7 @@ export default function AuthContent() {
     </p>
   </div>
   {/* Welcome section */}
-  <div className='w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex flex-col justify-between'>
+  <div className='hidden md:flex w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex-col justify-between'>
     <div>
       <h1 className="text-4xl font-bold mb-4">Kadosh</h1>
       <p className="text-xl mb-8">Durable electronics</p>
@@ -96,8 +96,6 @@ export default function AuthContent() {
       <p className="text-sm opacity-75">Join thousands of users who have already trusted Kadosh.</p>
     </div>
   </div>
-
-  
 </div>
   );
 }

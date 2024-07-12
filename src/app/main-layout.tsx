@@ -1,11 +1,11 @@
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// Extra imports
+import { usePathname } from "next/navigation";
 import PrimaryNavbar from "@/components/primarynav";
 import SecondaryNavbar from "@/components/secondarynav";
 import FooterNavbar from "@/components/footernav";
-// auth provider
 import { AuthProvider } from "../components/authprovider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,14 +20,21 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   return (
     <div className={inter.className}>
       <AuthProvider>
-        <PrimaryNavbar />
-        <hr />
-        <SecondaryNavbar />
+        {!isHomePage && (
+          <>
+            <PrimaryNavbar />
+            <hr />
+            <SecondaryNavbar />
+          </>
+        )}
         {children}
-        <FooterNavbar />
+        {!isHomePage && <FooterNavbar />}
       </AuthProvider>
     </div>
   );

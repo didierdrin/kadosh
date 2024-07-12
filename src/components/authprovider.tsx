@@ -55,7 +55,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = async () => {
     try {
       await signOut(auth);
-      router.push('/auth');
+      router.push('/home');
     } catch (error) {
       console.error('Logout error:', error);
     }

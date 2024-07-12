@@ -1,5 +1,6 @@
 // all products - USED IN homePAGE.tsx
 "use client";
+import { FaShoppingCart } from "react-icons/fa";
 import React from "react";
 import Link from "next/link";
 // import product cards
@@ -9,7 +10,12 @@ import { useProducts } from "@/components/useproducts";
 export default function Allproducts() {
   const { products, loading, error } = useProducts();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return (<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
+  <div className="animate-pulse">
+    <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
+  </div>
+  <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
+</div>);
   if (error) return <div>Error: {error.message}</div>;
 
   return (

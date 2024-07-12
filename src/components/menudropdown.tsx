@@ -1,6 +1,7 @@
 // components/DropdownPlain.tsx (Menu component)
 import React, { useState } from "react";
 import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
 
 interface MenuItem {
   id: number;
@@ -59,18 +60,19 @@ const Menu: React.FC<Props> = ({ item }) => {
       </button>
 
       {/* Dropdown menu */}
+
       <div
-        className={`absolute top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-gray-200 rounded-md ${transClass}`}
-        style={{ right: 0 }}
+        className={`absolute top-16 right-4 z-30 w-[280px] flex flex-col py-2 bg-white rounded-lg shadow-lg ${transClass}`}
       >
-        {item.map((menuItem) => (
+        {item.map((menuItem: MenuItem) => (
           <Link
             key={menuItem.id}
             href={menuItem.route}
-            className="hover:bg-gray-300 hover:text-gray-600 px-4 py-1"
+            className="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors duration-200"
             onClick={toggleDropdown}
           >
-            {menuItem.title}
+            <span className="text-gray-800 font-medium">{menuItem.title}</span>
+            <FaChevronRight className="text-gray-400" size={12} />
           </Link>
         ))}
       </div>
