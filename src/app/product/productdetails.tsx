@@ -2,6 +2,8 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from '@/components/authprovider';
 import { FaShoppingCart, FaDollarSign, FaHeart } from 'react-icons/fa';
+import { db } from '@/components/authprovider';
+import { doc, updateDoc, arrayUnion, getDoc, setDoc } from 'firebase/firestore';
 
 interface Product {
   id: number;
@@ -24,13 +26,43 @@ export default function ProductDetails() {
 
     if (!product) return <div className="text-center py-10">Product not found</div>;
 
-    const handleAddToCart = () => {
+   
+    const handleAddToCart = async () => {
       if (!user) {
         router.push('/auth');
       } else {
-        // Add to cart logic here
-        console.log('Added to cart');
-        // router.push(`/watchlist?data=${encodeURIComponent(JSON.stringify(product))}`);
+        try {
+          const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
+          const docSnap = await getDoc(userDocRef);
+    
+          const newProduct = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            details: product.details,
+            img: product.img,
+            manufacturer: product.manufacturer,
+            model: product.model,
+            category: product.category,
+            qty: 1
+          };
+    
+          if (!docSnap.exists()) {
+            // If the document doesn't exist, create it with the cart array
+            await setDoc(userDocRef, { cart: [newProduct] });
+          } else {
+            // If the document exists, update the cart array
+            await updateDoc(userDocRef, {
+              cart: arrayUnion(newProduct)
+            });
+          }
+    
+          console.log('Added to cart');
+          router.push('/cart');
+        } catch (error) {
+          console.error("Error adding to cart: ", error);
+          // Handle the error appropriately (e.g., show an error message to the user)
+        }
       }
     };
 

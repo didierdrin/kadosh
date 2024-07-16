@@ -54,14 +54,16 @@ const PrimaryNavbar = () => {
         Orders
         <br />& Returns
       </a>
-      <a href="/" className="hover:text-teal-500">
+      <a href="/cart" className="hover:text-teal-500">
         Watchlist
       </a>
       <a href="/" className="hover:text-teal-500">
         My Kadosh
       </a>
-      <FaBell className="text-lg hover:text-teal-500" />
+      <FaBell href="/cart" className="text-lg hover:text-teal-500" />
+      <a href="/cart">
       <FaShoppingCart className="text-lg hover:text-teal-500" />
+      </a>
       <div className="relative group">
         <FaUser className="text-lg hover:text-teal-500 cursor-pointer" />
         <div className="absolute right-0 top-full w-48 bg-white rounded-md shadow-lg py-1 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
