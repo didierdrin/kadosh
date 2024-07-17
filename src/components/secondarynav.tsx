@@ -40,8 +40,8 @@ const SecondaryNavbar = () => {
       <div className="block sm:hidden">
         <Menu
           item={[
-            { id: 1, title: "Cart", route: "/" },
-            { id: 2, title: "Profile", route: "/" },
+            { id: 1, title: "Cart", route: "/cart" },
+            { id: 2, title: "Profile", route: "/auth" },
           ]}
         />
       </div>

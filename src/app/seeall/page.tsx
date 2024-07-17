@@ -29,7 +29,7 @@ const ListTile = ({ product }: any) => {
       />
       <div>
         <h3 className="text-lg font-semibold">{product.name}</h3>
-        <p className="text-gray-600">RWF{commafy(product.price.toFixed(2))}</p>
+        <p className="text-gray-600 mb-3">RWF{commafy(product.price.toFixed(2))}</p>
         <p className="text-sm text-gray-500">{product.details}</p>
       </div>
     </div>
