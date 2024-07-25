@@ -91,6 +91,7 @@ export default function ProductDetails() {
           src={product.img}
           alt={product.name}
           width={500}
+          height={500}
           className="w-full h-auto object-cover rounded-lg shadow-md"
         />
       </div>

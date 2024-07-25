@@ -6,7 +6,7 @@ export default function Categorycard({ imgUrl, productName }: any) {
   return (
     <div className="flex flex-col items-center hover:border-b border-black">
       <div className="w-40 h-40 bg-white rounded-full shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-        <Image src={imgUrl} alt={productName} className="object-cover w-full h-full" width={20}/>
+        <Image src={imgUrl} alt={productName} className="object-cover w-full h-full" width={20} height={20} />
       </div>
       <a href="/" className="mt-3">
         {productName}
