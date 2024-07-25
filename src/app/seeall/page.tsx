@@ -1,6 +1,6 @@
 // see all - navigation route
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
@@ -41,7 +41,7 @@ const ListTile = ({ product }: any) => {
 };
 
 // Main Seeall component
-export default function Seeall() {
+function SeeallContent() {
   const [showFilters, setShowFilters] = useState(false);
   
   const searchParams = useSearchParams();
@@ -161,5 +161,14 @@ export default function Seeall() {
         )}
       </div>
     </div>
+  );
+}
+
+// Main Seeall component
+export default function Seeall() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SeeallContent />
+    </Suspense>
   );
 }

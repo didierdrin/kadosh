@@ -27,31 +27,52 @@ export default function Cart() {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
 
-  const fetchCartItems = async () => {
-    try {
-      if (!user) throw new Error("No user found");
+  // const fetchCartItems = async () => {
+  //   try {
+  //     if (!user) throw new Error("No user found");
 
-      const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
-      const userDoc = await getDoc(userDocRef);
+  //     const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
+  //     const userDoc = await getDoc(userDocRef);
 
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        setCartItems(userData.cart || []);
-      } else {
-        await setDoc(userDocRef, { cart: [] });
-        setCartItems([]);
-      }
-    } catch (error) {
-      console.error("Error fetching cart items: ", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (userDoc.exists()) {
+  //       const userData = userDoc.data();
+  //       setCartItems(userData.cart || []);
+  //     } else {
+  //       await setDoc(userDocRef, { cart: [] });
+  //       setCartItems([]);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching cart items: ", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   useEffect(() => {
     const checkAuth = async () => {
       if (!authLoading) {
         if (user) {
+          const fetchCartItems = async () => {
+            try {
+              if (!user) throw new Error("No user found");
+  
+              const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
+              const userDoc = await getDoc(userDocRef);
+  
+              if (userDoc.exists()) {
+                const userData = userDoc.data();
+                setCartItems(userData.cart || []);
+              } else {
+                await setDoc(userDocRef, { cart: [] });
+                setCartItems([]);
+              }
+            } catch (error) {
+              console.error("Error fetching cart items: ", error);
+            } finally {
+              setLoading(false);
+            }
+          };
+  
           await fetchCartItems();
         } else {
           router.push('/auth');
@@ -61,7 +82,7 @@ export default function Cart() {
     };
   
     checkAuth();
-  }, [user, authLoading, router, fetchCartItems]);
+  }, [user, authLoading, router]);
 
   const updateCart = async (newCart: CartItem[]) => {
     if (!user) return;
