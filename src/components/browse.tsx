@@ -1,6 +1,7 @@
 // browse - Used in home page.tsx
 "use client";
 import React from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Browse() {
@@ -14,7 +15,7 @@ export default function Browse() {
     <div className="flex flex-col sm:flex-row w-full justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-10 bg-orange-200 p-4 sm:p-6 lg:p-8">
       {/* Image */}
       <div className="w-full sm:w-1/2 lg:w-[45%] xl:w-[40%]">
-        <img
+        <Image
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720171564/Kadosh_edit_kujjio.png"
           className="w-full h-auto object-cover rounded-lg shadow-md"
           alt="Digital products"

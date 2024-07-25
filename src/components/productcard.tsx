@@ -1,4 +1,5 @@
 // Produt card component
+import Image from 'next/image';
 import React from 'react';
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -18,7 +19,7 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
         <div className='flex flex-col w-64 bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1'>
             {/* Product image */}
             <div className='relative h-48 overflow-hidden'>
-                <img 
+                <Image 
                     src={imgUrl} 
                     alt={productName} 
                     className='w-full h-full object-cover transition-transform duration-300 hover:scale-110'

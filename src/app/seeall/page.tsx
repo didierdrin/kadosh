@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 // Firebase Firestore Data hook
 import { useProducts } from "@/components/useproducts";
@@ -25,7 +26,7 @@ const ListTile = ({ product }: any) => {
 
   return (
     <div className="border rounded-lg p-4 mb-4 flex items-center hover:-translate-y-1 cursor-pointer">
-      <img
+      <Image
         src={product.img}
         alt={product.name}
         className="w-24 h-24 object-cover mr-4"

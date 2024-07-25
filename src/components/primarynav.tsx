@@ -47,7 +47,7 @@ const PrimaryNavbar = () => {
         {user ? (
           <>
             <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-            <span className="text-green-500">Hey! You're Signed In</span>
+            <span className="text-green-500">Hey! You&apos;re Signed In</span>
           </>
         ) : (
           <>

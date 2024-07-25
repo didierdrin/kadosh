@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect} from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function SlideshowNavbar() {
   const router = useRouter();
@@ -22,10 +23,10 @@ export default function SlideshowNavbar() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % headlines.length);
-    }, 8000); // Change slide every 5 seconds
-
+    }, 8000); // Change slide every 8 seconds
+  
     return () => clearInterval(timer);
-  }, []);
+  }, [headlines.length]);
 
   const HandleShopNowBtn = () => {
     if (router) {
@@ -78,7 +79,7 @@ export default function SlideshowNavbar() {
       </div>
 
       <div className="flex flex-col items-center">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
           alt="Computer accessories"
           className="w-64 h-auto rounded-lg shadow-md"
@@ -109,7 +110,7 @@ export default function SlideshowNavbar() {
       </div>
 
       <div className="flex flex-col items-center">
-        <img
+        <Image
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720125977/c-d-x-PDX_a_82obo-unsplash_rqphy7.jpg"
           alt="Electronic accessories"
           className="w-64 h-auto rounded-lg shadow-md"

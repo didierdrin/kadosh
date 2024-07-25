@@ -111,6 +111,12 @@ export default function ProductDetails() {
           </ul>
         </div>
         <div className="flex items-center space-x-4">
+        <button 
+            onClick={handleAddToWatchlist}
+            className="text-slate-600 bg-white border  border-black rounded-xl p-2  hover:text-red-700 transition duration-300 ease-in-out transform hover:scale-110"
+          >
+            <FaHeart size={24} />
+          </button>
           <button 
             onClick={handleAddToCart}
             className="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
@@ -123,12 +129,7 @@ export default function ProductDetails() {
           >
             <FaDollarSign className="mr-2" /> Buy Now
           </button>
-          <button 
-            onClick={handleAddToWatchlist}
-            className="text-red-600 hover:text-red-700 transition duration-300 ease-in-out transform hover:scale-110"
-          >
-            <FaHeart size={24} />
-          </button>
+          
         </div>
       </div>
     </div>
