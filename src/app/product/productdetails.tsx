@@ -4,6 +4,7 @@ import { useAuth } from '@/components/authprovider';
 import { FaShoppingCart, FaDollarSign, FaHeart } from 'react-icons/fa';
 import { db } from '@/components/authprovider';
 import { doc, updateDoc, arrayUnion, getDoc, setDoc } from 'firebase/firestore';
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -86,7 +87,7 @@ export default function ProductDetails() {
   return (
     <div className="flex flex-wrap -mx-4">
       <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        <img
+        <Image
           src={product.img}
           alt={product.name}
           className="w-full h-auto object-cover rounded-lg shadow-md"

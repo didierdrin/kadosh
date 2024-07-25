@@ -28,20 +28,7 @@ const OrderConfirmation: React.FC = () => {
   const { user, loading: authLoading } = useAuth();
   const db = getFirestore();
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      if (!authLoading) {
-        if (user) {
-          await fetchOrderData();
-        } else {
-          router.push('/auth');
-        }
-        setAuthChecked(true);
-      }
-    };
-
-    checkAuth();
-  }, [user, authLoading, router]);
+  
 
   const fetchOrderData = async () => {
     if (!user) {
@@ -73,6 +60,21 @@ const OrderConfirmation: React.FC = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      if (!authLoading) {
+        if (user) {
+          await fetchOrderData();
+        } else {
+          router.push('/auth');
+        }
+        setAuthChecked(true);
+      }
+    };
+
+    checkAuth();
+  }, [user, authLoading, router, fetchOrderData]);
 
   if (authLoading || !authChecked) {
     return <div className="container mx-auto px-4 py-8 text-center">Checking authentication...</div>;

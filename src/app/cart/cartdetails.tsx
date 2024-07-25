@@ -27,21 +27,6 @@ export default function Cart() {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      if (!authLoading) {
-        if (user) {
-          await fetchCartItems();
-        } else {
-          router.push('/auth');
-        }
-        setAuthChecked(true);
-      }
-    };
-
-    checkAuth();
-  }, [user, authLoading, router]);
-
   const fetchCartItems = async () => {
     try {
       if (!user) throw new Error("No user found");
@@ -62,6 +47,21 @@ export default function Cart() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      if (!authLoading) {
+        if (user) {
+          await fetchCartItems();
+        } else {
+          router.push('/auth');
+        }
+        setAuthChecked(true);
+      }
+    };
+  
+    checkAuth();
+  }, [user, authLoading, router, fetchCartItems]);
 
   const updateCart = async (newCart: CartItem[]) => {
     if (!user) return;
