@@ -22,6 +22,7 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
                 <Image 
                     src={imgUrl} 
                     alt={productName} 
+                    width={20}
                     className='w-full h-full object-cover transition-transform duration-300 hover:scale-110'
                 />
                 {discountPercentage && (

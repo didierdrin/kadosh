@@ -90,6 +90,7 @@ export default function ProductDetails() {
         <Image
           src={product.img}
           alt={product.name}
+          width={500}
           className="w-full h-auto object-cover rounded-lg shadow-md"
         />
       </div>

@@ -82,6 +82,7 @@ export default function SlideshowNavbar() {
         <Image
           src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
           alt="Computer accessories"
+          width={20}
           className="w-64 h-auto rounded-lg shadow-md"
         />
 
@@ -113,6 +114,7 @@ export default function SlideshowNavbar() {
         <Image
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720125977/c-d-x-PDX_a_82obo-unsplash_rqphy7.jpg"
           alt="Electronic accessories"
+          width={20}
           className="w-64 h-auto rounded-lg shadow-md"
         />
 

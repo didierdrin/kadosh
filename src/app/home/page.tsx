@@ -1,6 +1,5 @@
 'use client';
 // home page
-import Image from "next/image";
 // importing page contents
 import Allproducts from "@/components/allproducts";
 import Explorecategories from "@/components/explorecategories";

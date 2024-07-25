@@ -151,7 +151,7 @@ export default function Cart() {
       {cartItems.map((item) => (
         <div key={item.id} className="flex items-center justify-between border-b py-4">
           <div className="flex items-center">
-            <Image src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" />
+            <Image src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" width={20} />
             <div>
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-gray-600">RWF {item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}</p>
