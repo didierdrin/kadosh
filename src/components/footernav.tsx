@@ -94,6 +94,7 @@ export default function FooterNavbar() {
                   <li><a href="/" className="hover:underline">Careers</a></li>
                   <li><a href="/" className="hover:underline">Advertise with us</a></li>
                   <li><a href="/" className="hover:underline">Policies</a></li>
+                  <li><a href="/" className="hover:underline">Become a seller</a></li>
               </ul>
           </div>
           <div>

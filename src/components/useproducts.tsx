@@ -14,7 +14,7 @@ interface Product {
     details: string; 
 }
 
-export function useProducts() {
+export function useProducts(searchTerm: string = '') {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -23,13 +23,9 @@ export function useProducts() {
     async function fetchProducts() {
       try {
         const db = getFirestore();
-        // Get the "users" collection
         const usersCollection = collection(db, 'users');
-        // Get the specific user document (assuming there's only one or you know its ID)
         const userDoc = doc(usersCollection, 'qWE5sgjt0RRhtHDqwciu');
-        // Get the "seller_data" subcollection
         const sellerDataCollection = collection(userDoc, 'seller_data');
-        // Get the specific document in "seller_data" (assuming there's only one or you know its ID)
         const sellerDataDoc = doc(sellerDataCollection, 'Aa8DJ0GHYuhpI1Tt861e');
         
         const sellerDataSnapshot = await getDoc(sellerDataDoc);
@@ -37,7 +33,15 @@ export function useProducts() {
         if (sellerDataSnapshot.exists()) {
           const sellerData = sellerDataSnapshot.data();
           if (sellerData && sellerData.products) {
-            setProducts(sellerData.products);
+            let filteredProducts = sellerData.products;
+            if (searchTerm) {
+              filteredProducts = filteredProducts.filter((product: Product) =>
+                product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                product.manufacturer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                (product.details && product.details.toLowerCase().includes(searchTerm.toLowerCase()))
+              );
+            }
+            setProducts(filteredProducts);
           }
         } else {
           setError(new Error('Seller data not found'));
@@ -50,53 +54,9 @@ export function useProducts() {
     }
 
     fetchProducts();
-  }, []);
+  }, [searchTerm]);
 
   return { products, loading, error };
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const userDoc = doc(db, 'users', auth.currentUser!.uid);
-/* 
-useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const db = getFirestore();
-        const userDoc = doc(db, 'users', auth.currentUser!.uid);
-        const userSnapshot = await getDoc(userDoc);
-        
-        if (userSnapshot.exists()) {
-          const userData = userSnapshot.data();
-          const sellerData = userData.seller_data;
-          if (sellerData && sellerData.products) {
-            setProducts(sellerData.products);
-          }
-        }
-        setLoading(false);
-      } catch (err) {
-        //setError('$err');
-        setLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, []); */

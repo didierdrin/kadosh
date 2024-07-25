@@ -94,7 +94,7 @@ export default function ProductDetails() {
       </div>
       <div className="w-full md:w-1/2 px-4">
         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-        <p className="text-2xl font-semibold text-blue-600 mb-4">
+        <p className="text-lg text-blue-600 mb-4">
           RWF {product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
         </p>
         <div className="mb-6">

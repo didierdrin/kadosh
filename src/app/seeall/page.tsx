@@ -1,10 +1,13 @@
 // see all - navigation route
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 // Firebase Firestore Data hook
 import { useProducts } from "@/components/useproducts";
 import { FaShoppingCart } from "react-icons/fa";
+
+import { useSearchParams } from 'next/navigation';
 
 // ListTile component for individual products
 const ListTile = ({ product }: any) => {
@@ -29,7 +32,7 @@ const ListTile = ({ product }: any) => {
       />
       <div>
         <h3 className="text-lg font-semibold">{product.name}</h3>
-        <p className="text-gray-600 mb-3">RWF{commafy(product.price.toFixed(2))}</p>
+        <p className="text-sm text-indigo-600 mb-3 mt-1">RWF{commafy(product.price.toFixed(2))}</p>
         <p className="text-sm text-gray-500">{product.details}</p>
       </div>
     </div>
@@ -39,7 +42,15 @@ const ListTile = ({ product }: any) => {
 // Main Seeall component
 export default function Seeall() {
   const [showFilters, setShowFilters] = useState(false);
-  const { products, loading, error } = useProducts();
+  
+  const searchParams = useSearchParams();
+  const search = searchParams.get('search');
+  const searchTerm = search || '';
+  const { products, loading, error } = useProducts(searchTerm);
+
+  useEffect(() => {
+    // This effect will run when the search term changes
+  }, [searchTerm]);
 
   if (loading) return (<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
   <div className="animate-pulse">
@@ -128,7 +139,9 @@ export default function Seeall() {
 
       {/* Product list */}
       <div className="w-full sm:w-full p-4">
-        <h1 className="text-2xl font-bold mb-6">All Products</h1>
+        <h1 className="text-2xl font-bold mb-6">
+          {searchTerm ? `Search Results for "${searchTerm}"` : "All Products"}
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {products.map((product) => (
             <Link
@@ -142,6 +155,9 @@ export default function Seeall() {
             </Link>
           ))}
         </div>
+        {products.length === 0 && (
+          <p className="text-center text-gray-500 mt-8">No products found.</p>
+        )}
       </div>
     </div>
   );

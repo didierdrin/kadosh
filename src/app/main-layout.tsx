@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import PrimaryNavbar from "@/components/primarynav";
 import SecondaryNavbar from "@/components/secondarynav";
 import FooterNavbar from "@/components/footernav";
+import BackToTop from "@/components/backtotop";
+import StripNavbar from "@/components/stripnavbar"; 
 import { AuthProvider } from "../components/authprovider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,10 +33,16 @@ export default function MainLayout({
             <PrimaryNavbar />
             <hr />
             <SecondaryNavbar />
+            <StripNavbar /> 
           </>
         )}
         {children}
-        {!isHomePage && <FooterNavbar />}
+        {!isHomePage && (
+          <>
+            <BackToTop />
+            <FooterNavbar />
+          </>
+        )}
       </AuthProvider>
     </div>
   );
