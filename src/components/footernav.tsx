@@ -12,10 +12,10 @@ export default function FooterNavbar() {
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>Buy</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">Registration</a></li>
-                  <li><a href="/" className="hover:underline">Kadosh Refund Policy</a></li>
-                  <li><a href="/" className="hover:underline">Bidding & buying help</a></li>
-                  <li><a href="/" className="hover:underline">Stores</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Registration</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Kadosh Refund Policy</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Bidding & buying help</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Stores</a></li>
                   <li><hr /></li>
                   <li><a
           href="#"
@@ -46,21 +46,21 @@ export default function FooterNavbar() {
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>Sell</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">Start selling</a></li>
-                  <li><a href="/" className="hover:underline">Learn to sell</a></li>
-                  <li><a href="/" className="hover:underline">Affiliates</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Start selling</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Learn to sell</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Affiliates</a></li>
               </ul>
               <h4 className='font-bold mb-3 mt-6 text-base lg:text-lg'>Tools & apps</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">Developers</a></li>
-                  <li><a href="/" className="hover:underline">Security center</a></li>
-                  <li><a href="/" className="hover:underline">Site map</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Developers</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Security center</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Site map</a></li>
               </ul>
           </div>
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>Stay connected</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="flex items-center space-x-2 hover:text-blue-600">
+                  <li><a href="/" className="flex items-center space-x-2 hover:text-teal-600">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
                       </svg>
@@ -89,30 +89,30 @@ export default function FooterNavbar() {
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>About Kadosh</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">Company info</a></li>
-                  <li><a href="/" className="hover:underline">News</a></li>
-                  <li><a href="/" className="hover:underline">Careers</a></li>
-                  <li><a href="/" className="hover:underline">Advertise with us</a></li>
-                  <li><a href="/" className="hover:underline">Policies</a></li>
-                  <li><a href="/" className="hover:underline">Become a seller</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Company info</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">News</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Careers</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Advertise with us</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Policies</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Become a seller</a></li>
               </ul>
           </div>
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>Help & Contact</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">Seller information center</a></li>
-                  <li><a href="/" className="hover:underline">Contact us</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Seller information center</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Contact us</a></li>
               </ul>
               <h4 className='font-bold mb-3 mt-6 text-base lg:text-lg'>Select language</h4>
               <ul className="space-y-2">
-                  <li><a href="/" className="hover:underline">English</a></li>
-                  <li><a href="/" className="hover:underline">Kinyarwanda</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">English</a></li>
+                  <li><a href="/" className="hover:underline hover:text-teal-500">Kinyarwanda</a></li>
               </ul>
           </div>
       </div>
       <hr className="my-6 border-t border-gray-300" />
       <div className="text-center text-sm">
-          <p>Copyright 2024 Kadosh ltd. All Rights Reserved.</p>
+          <p>&#169; Copyright 2024 | Kadosh ltd. All Rights Reserved.</p>
       </div>
   </footer>
     );

@@ -29,8 +29,8 @@ const ListTile = ({ product }: any) => {
       <Image
         src={product.img}
         alt={product.name}
-        width={20} 
-        height={20}
+        width={1500} 
+        height={1500}
         className="w-24 h-24 object-cover mr-4"
       />
       <div>
