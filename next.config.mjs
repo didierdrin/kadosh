@@ -10,6 +10,12 @@ const nextConfig = {
                 pathname: '/**',
             },
             {
+
+                protocol: 'https', 
+                hostname: 'firebasestorage.googleapis', 
+                pathname: '/**',
+            },
+            {
                 protocol: 'https',
                 hostname: 'images.unsplash.com',
                 pathname: '/**',

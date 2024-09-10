@@ -3,12 +3,12 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 // Firebase Firestore Data hook
 import { useProducts } from "@/components/useproducts";
 import { FaShoppingCart } from "react-icons/fa";
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
 
 // ListTile component for individual products
 const ListTile = ({ product }: any) => {
@@ -29,14 +29,21 @@ const ListTile = ({ product }: any) => {
       <Image
         src={product.img}
         alt={product.name}
-        width={1500} 
+        width={1500}
         height={1500}
         className="w-24 h-24 object-cover mr-4"
       />
       <div>
         <h3 className="text-lg font-semibold">{product.name}</h3>
-        <p className="text-sm text-indigo-600 mb-3 mt-1">RWF{commafy(product.price.toFixed(2))}</p>
-        <p className="text-sm text-gray-500">{product.details}</p>
+        <p className="text-sm text-indigo-600 mb-3 mt-1">
+          RWF{commafy(product.price.toFixed(2))}
+        </p>
+        {/* <p className="text-sm text-gray-500">{product.details}</p> */}
+        <p className="text-sm text-gray-500">
+          {product.details.length > 100
+            ? `${product.details.substring(0, 100)}...`
+            : product.details}
+        </p>
       </div>
     </div>
   );
@@ -45,22 +52,30 @@ const ListTile = ({ product }: any) => {
 // Main Seeall component
 function SeeallContent() {
   const [showFilters, setShowFilters] = useState(false);
-  
+
   const searchParams = useSearchParams();
-  const search = searchParams.get('search');
-  const searchTerm = search || '';
+  const search = searchParams.get("search");
+  const searchTerm = search || "";
   const { products, loading, error } = useProducts(searchTerm);
 
   useEffect(() => {
     // This effect will run when the search term changes
   }, [searchTerm]);
 
-  if (loading) return (<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
-  <div className="animate-pulse">
-    <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
-  </div>
-  <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
-</div>);
+  if (loading)
+    return (
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
+        <div className="animate-pulse">
+          <FaShoppingCart
+            className="text-sky-600 animate-cart-scale"
+            size={64}
+          />
+        </div>
+        <p className="mt-4 text-lg font-semibold text-gray-700">
+          Loading Kadosh...
+        </p>
+      </div>
+    );
   if (error) return <div>Error: {error.message}</div>;
 
   // Sample categories for sidebar
