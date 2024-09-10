@@ -19,12 +19,12 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
         <div className='flex flex-col w-64 bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1'>
             {/* Product image */}
             <div className='relative h-48 overflow-hidden'>
-                <Image 
+                <img
                     src={imgUrl} 
                     alt={productName} 
                     width={1500}
                     height={1500}
-                    priority 
+                    // priority 
                     className='w-full h-full object-cover transition-transform duration-300 hover:scale-110'
                 />
                 {discountPercentage && (

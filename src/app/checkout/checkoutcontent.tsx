@@ -349,7 +349,7 @@ export default function CheckoutContent() {
                   key={item.id}
                   className="flex items-center mb-4 border-b pb-4"
                 >
-                  <Image
+                  <img
                     src={item.img}
                     alt={item.name}
                     width={50}
