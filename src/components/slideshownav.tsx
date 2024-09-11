@@ -9,9 +9,9 @@ export default function SlideshowNavbar() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const headlines = [
-    <>Everything you need<br />with just a click</>,
-    <>Discover amazing deals<br />every day</>,
-    <>Shop smart,<br />save big on gadgets</>
+    <>Everything you need<br />With just a click</>,
+    <>Discover amazing<br />Deals every day</>,
+    <>Shop smart, save<br />Big on gadgets</>
   ];
   
   const subheadlines = [
@@ -78,18 +78,18 @@ export default function SlideshowNavbar() {
         </button>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center cursor-pointer">
         <img
           src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
           alt="Computer accessories"
           width="1500"
           height="1500"
-          className="w-64 h-auto rounded-lg shadow-md"
+          className="w-64 h-auto rounded-lg shadow-md hover:-translate-x-1"
         />
 
-        <div className="relative my-3">
+        <div className="relative my-3 cursor-pointer">
           <a
-            href="/"
+            href="/seeall"
             className="mt-4 mx-4 text-blue-500 hover:text-blue-800 transition-colors duration-200"
           >
             Desktops & Laptops
@@ -111,18 +111,18 @@ export default function SlideshowNavbar() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center cursor-pointer">
         <img
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720125977/c-d-x-PDX_a_82obo-unsplash_rqphy7.jpg"
           alt="Electronic accessories"
           width="1500"
           height="1500"
-          className="w-64 h-auto rounded-lg shadow-md"
+          className="w-64 h-auto rounded-lg shadow-md hover:-translate-x-1"
         />
 
         <div className="relative my-3">
           <a
-            href="/"
+            href="/seeall"
             className="mt-4 mx-4 text-blue-500 hover:text-blue-800 transition-colors duration-200"
           >
             Electronic accessories
