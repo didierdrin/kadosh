@@ -52,6 +52,9 @@ export default function Allproducts() {
                   })
                 )}`}
                 className="block"
+                target="_blank"
+  rel="noopener noreferrer"
+  
               >
                 <Productcard
                   imgUrl={product.img}

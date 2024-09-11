@@ -52,44 +52,6 @@ const ListTile = ({ product }: any) => {
 };
 
 
-// const ListTile = ({ product }: any) => {
-//   //var num = product.price;
-//   function commafy(num: any) {
-//     var str = num.toString().split(".");
-//     if (str[0].length >= 5) {
-//       str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
-//     }
-//     if (str[1] && str[1].length >= 5) {
-//       str[1] = str[1].replace(/(\d{3})/g, "$1 ");
-//     }
-//     return str.join(".");
-//   }
-
-//   return (
-//     <div className="border rounded-lg p-4 mb-4 flex items-center hover:-translate-y-1 cursor-pointer">
-//       <img
-    
-//         src={product.img}
-//         alt={product.name}
-//         width="1500"
-//         height="1500"
-//         className="w-24 h-24 object-cover mr-4"
-//       />
-//       <div>
-//         <h3 className="text-lg font-semibold">{product.name}</h3>
-//         <p className="text-sm text-indigo-600 mb-3 mt-1">
-//           RWF{commafy(product.price.toFixed(2))}
-//         </p>
-//         {/* <p className="text-sm text-gray-500">{product.details}</p> */}
-//         <p className="text-sm text-gray-500">
-//           {product.details.length > 100
-//             ? `${product.details.substring(0, 100)}...`
-//             : product.details}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
 
 // Main Seeall component
 function SeeallContent() {
@@ -222,6 +184,8 @@ function SeeallContent() {
                 })
               )}`}
               className="block"
+              target="_blank"
+  rel="noopener noreferrer"
             >
               <ListTile product={product} />
             </Link>
