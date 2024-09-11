@@ -2,7 +2,7 @@
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 // Firebase Firestore Data hook
 import { useProducts } from "@/components/useproducts";
@@ -12,7 +12,7 @@ import { useSearchParams } from "next/navigation";
 
 // ListTile component for individual products
 const ListTile = ({ product }: any) => {
-  //var num = product.price;
+  // Function to format the price with commas
   function commafy(num: any) {
     var str = num.toString().split(".");
     if (str[0].length >= 5) {
@@ -25,29 +25,71 @@ const ListTile = ({ product }: any) => {
   }
 
   return (
-    <div className="border rounded-lg p-4 mb-4 flex items-center hover:-translate-y-1 cursor-pointer">
+    <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[220px] hover:-translate-y-1 cursor-pointer">
       <img
         src={product.img}
         alt={product.name}
-        width={1500}
-        height={1500}
+        width="1500"
+        height="1500"
         className="w-24 h-24 object-cover mr-4"
       />
-      <div>
-        <h3 className="text-lg font-semibold">{product.name}</h3>
-        <p className="text-sm text-indigo-600 mb-3 mt-1">
-          RWF{commafy(product.price.toFixed(2))}
+      <div className="flex flex-col justify-between h-full">
+        <h3 className="text-lg font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+          {product.name}
+        </h3>
+        <p className="text-sm text-indigo-600 mb-3 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+          RWF {commafy(product.price.toFixed(2))}
         </p>
-        {/* <p className="text-sm text-gray-500">{product.details}</p> */}
         <p className="text-sm text-gray-500">
-          {product.details.length > 100
-            ? `${product.details.substring(0, 100)}...`
+          {product.details.length > 80
+            ? `${product.details.substring(0, 80)}...`
             : product.details}
         </p>
+        
       </div>
     </div>
   );
 };
+
+
+// const ListTile = ({ product }: any) => {
+//   //var num = product.price;
+//   function commafy(num: any) {
+//     var str = num.toString().split(".");
+//     if (str[0].length >= 5) {
+//       str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+//     }
+//     if (str[1] && str[1].length >= 5) {
+//       str[1] = str[1].replace(/(\d{3})/g, "$1 ");
+//     }
+//     return str.join(".");
+//   }
+
+//   return (
+//     <div className="border rounded-lg p-4 mb-4 flex items-center hover:-translate-y-1 cursor-pointer">
+//       <img
+    
+//         src={product.img}
+//         alt={product.name}
+//         width="1500"
+//         height="1500"
+//         className="w-24 h-24 object-cover mr-4"
+//       />
+//       <div>
+//         <h3 className="text-lg font-semibold">{product.name}</h3>
+//         <p className="text-sm text-indigo-600 mb-3 mt-1">
+//           RWF{commafy(product.price.toFixed(2))}
+//         </p>
+//         {/* <p className="text-sm text-gray-500">{product.details}</p> */}
+//         <p className="text-sm text-gray-500">
+//           {product.details.length > 100
+//             ? `${product.details.substring(0, 100)}...`
+//             : product.details}
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
 
 // Main Seeall component
 function SeeallContent() {
@@ -60,22 +102,28 @@ function SeeallContent() {
 
   useEffect(() => {
     // This effect will run when the search term changes
-  }, [searchTerm]);
+    if (loading) {
+      document.title = "Loading Kadosh..."; // Update title when loading
+    } else {
+      document.title = "Kadosh"; // Restore the title once loaded
+    }
+  }, [searchTerm, loading]);
 
-  if (loading)
-    return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
-        <div className="animate-pulse">
-          <FaShoppingCart
-            className="text-sky-600 animate-cart-scale"
-            size={64}
-          />
-        </div>
-        <p className="mt-4 text-lg font-semibold text-gray-700">
-          Loading Kadosh...
-        </p>
-      </div>
-    );
+  if (loading) return null;
+  // if (loading)
+  //   return (
+  //     <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
+  //       <div className="animate-pulse">
+  //         <FaShoppingCart
+  //           className="text-sky-600 animate-cart-scale"
+  //           size={64}
+  //         />
+  //       </div>
+  //       <p className="mt-4 text-lg font-semibold text-gray-700">
+  //         Loading Kadosh...
+  //       </p>
+  //     </div>
+  //   );
   if (error) return <div>Error: {error.message}</div>;
 
   // Sample categories for sidebar
@@ -164,8 +212,14 @@ function SeeallContent() {
           {products.map((product) => (
             <Link
               key={product.id}
+              // href={`/product?id=${product.id}&data=${encodeURIComponent(
+              //   JSON.stringify(product)
+              // )}`}
               href={`/product?id=${product.id}&data=${encodeURIComponent(
-                JSON.stringify(product)
+                JSON.stringify({
+                  ...product,
+                  img: encodeURIComponent(product.img)
+                })
               )}`}
               className="block"
             >

@@ -17,8 +17,8 @@ export default function Browse() {
       <div className="w-full sm:w-1/2 lg:w-[45%] xl:w-[40%]">
         <img
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720171564/Kadosh_edit_kujjio.png"
-          width={1500}
-          height={1500}
+          width="1500"
+          height="1500"
           className="w-full h-auto object-cover rounded-lg shadow-md"
           alt="Digital products"
         />

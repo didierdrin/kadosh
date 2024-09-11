@@ -10,12 +10,13 @@ import { useProducts } from "@/components/useproducts";
 export default function Allproducts() {
   const { products, loading, error } = useProducts();
 
-  if (loading) return (<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
-  <div className="animate-pulse">
-    <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
-  </div>
-  <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
-</div>);
+  if (loading) return null;
+//   if (loading) return (<div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
+//   <div className="animate-pulse">
+//     <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
+//   </div>
+//   <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
+// </div>);
   if (error) return <div>Error: {error.message}</div>;
 
   return (
@@ -41,8 +42,14 @@ export default function Allproducts() {
             products.map((product, index) => (
               <Link
                 key={product.id || `product-${index}`}
+                // href={`/product?id=${product.id}&data=${encodeURIComponent(
+                //   JSON.stringify(product)
+                // )}`}
                 href={`/product?id=${product.id}&data=${encodeURIComponent(
-                  JSON.stringify(product)
+                  JSON.stringify({
+                    ...product,
+                    img: encodeURIComponent(product.img)
+                  })
                 )}`}
                 className="block"
               >

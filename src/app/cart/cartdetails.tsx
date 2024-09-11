@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/authprovider';
 import { db } from '@/components/authprovider';
@@ -151,7 +151,7 @@ export default function Cart() {
       {cartItems.map((item) => (
         <div key={item.id} className="flex items-center justify-between border-b py-4">
           <div className="flex items-center">
-            <img src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" width={20} height={20} />
+            <img src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" width="20" height="20" />
             <div>
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-gray-600">RWF {item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}</p>
@@ -178,12 +178,12 @@ export default function Cart() {
         </div>
       ))}
       <div className="mt-8 flex justify-between items-center">
-        <div className="text-xl font-bold">
-          Total: RWF {cartItems.reduce((total, item) => total + item.price * item.qty, 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+        <div className="text-xl">
+          <strong>Total:</strong> RWF {cartItems.reduce((total, item) => total + item.price * item.qty, 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
         </div>
         <button
           onClick={handleBuyAll}
-          className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300"
+          className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition duration-300"
         >
           Buy All
         </button>

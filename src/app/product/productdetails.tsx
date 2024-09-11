@@ -4,7 +4,6 @@ import { useAuth } from '@/components/authprovider';
 import { FaShoppingCart, FaDollarSign, FaHeart } from 'react-icons/fa';
 import { db } from '@/components/authprovider';
 import { doc, updateDoc, arrayUnion, getDoc, setDoc } from 'firebase/firestore';
-import Image from "next/image";
 
 interface Product {
   id: number;
@@ -27,7 +26,8 @@ export default function ProductDetails() {
 
     if (!product) return <div className="text-center py-10">Product not found</div>;
 
-   
+    const decodedImgUrl = decodeURIComponent(product.img);
+
     const handleAddToCart = async () => {
       if (!user) {
         router.push('/auth');
@@ -88,15 +88,18 @@ export default function ProductDetails() {
     <div className="flex flex-wrap -mx-4">
       <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
         <img
-          src={product.img}
+          // src={product.img}
+          src={decodedImgUrl}
           alt={product.name}
-          width={500}
-          height={500}
-          className="w-full h-auto object-cover rounded-lg shadow-md"
+          width="1500"
+          height="1500"
+          
+          className="w-full h-full object-cover rounded-lg shadow-md"
         />
       </div>
       <div className="w-full md:w-1/2 px-4">
         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+
         <p className="text-lg text-blue-600 mb-4">
           RWF {product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
         </p>

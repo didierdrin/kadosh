@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../components/authprovider";
 import { FaLock, FaCreditCard, FaMobile, FaPaypal } from "react-icons/fa";
-import Image from "next/image";
+
 import { useRouter, useSearchParams } from "next/navigation";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { doc, getFirestore, updateDoc, arrayUnion } from "firebase/firestore";
@@ -352,8 +352,8 @@ export default function CheckoutContent() {
                   <img
                     src={item.img}
                     alt={item.name}
-                    width={50}
-                    height={50}
+                    width="50"
+                    height="50"
                     className="mr-4"
                   />
                   <div>

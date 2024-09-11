@@ -44,18 +44,18 @@ export default function FooterNavbar() {
               </ul>
           </div>
           <div>
-              <h4 className='font-bold mb-3 text-base lg:text-lg'>Sell</h4>
+              {/* <h4 className='font-bold mb-3 text-base lg:text-lg'>Sell</h4>
               <ul className="space-y-2">
                   <li><a href="/" className="hover:underline hover:text-teal-500">Start selling</a></li>
                   <li><a href="/" className="hover:underline hover:text-teal-500">Learn to sell</a></li>
                   <li><a href="/" className="hover:underline hover:text-teal-500">Affiliates</a></li>
-              </ul>
-              <h4 className='font-bold mb-3 mt-6 text-base lg:text-lg'>Tools & apps</h4>
+              </ul> */}
+              {/* <h4 className='font-bold mb-3 mt-6 text-base lg:text-lg'>Tools & apps</h4>
               <ul className="space-y-2">
                   <li><a href="/" className="hover:underline hover:text-teal-500">Developers</a></li>
                   <li><a href="/" className="hover:underline hover:text-teal-500">Security center</a></li>
                   <li><a href="/" className="hover:underline hover:text-teal-500">Site map</a></li>
-              </ul>
+              </ul> */}
           </div>
           <div>
               <h4 className='font-bold mb-3 text-base lg:text-lg'>Stay connected</h4>
