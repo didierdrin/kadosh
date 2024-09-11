@@ -25,7 +25,7 @@ const ListTile = ({ product }: any) => {
   }
 
   return (
-    <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[220px] hover:-translate-y-1 cursor-pointer">
+    <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[230px] hover:-translate-y-1 cursor-pointer">
       <img
         src={product.img}
         alt={product.name}
@@ -37,7 +37,7 @@ const ListTile = ({ product }: any) => {
         <h3 className="text-lg font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           {product.name}
         </h3>
-        <p className="text-sm text-indigo-600 mb-3 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+        <p className="text-sm text-indigo-600 mb-2 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           RWF {commafy(product.price.toFixed(2))}
         </p>
         <p className="text-sm text-gray-500">
