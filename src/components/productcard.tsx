@@ -15,7 +15,7 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
         return str.join(".");
       }
     return (
-        <div className='flex flex-col w-64 bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1'>
+        <div className='flex flex-col w-[270px] bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1'>
             {/* Product image */}
             <div className='relative h-48 overflow-hidden'>
                 <img

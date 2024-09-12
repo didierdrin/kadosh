@@ -37,7 +37,7 @@ export default function Allproducts() {
       </div>
       {/* Products list */}
       <div className="flex flex-col sm:flex-row mt-3 space-y-4 sm:space-y-0 sm:space-x-4">
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-spaceBetween gap-6">
           {products && products.length > 0 ? (
             products.map((product, index) => (
               <Link
