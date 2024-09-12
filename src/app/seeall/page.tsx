@@ -37,7 +37,7 @@ const ListTile = ({ product }: any) => {
         <h3 className="text-lg font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           {product.name}
         </h3>
-        <p className="text-sm text-indigo-600 mb-2 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+        <p className="text-sm text-blue-600 mb-2 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           RWF {commafy(product.price.toFixed(2))}
         </p>
         <p className="text-sm text-gray-500">

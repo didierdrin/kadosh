@@ -68,7 +68,7 @@ const ProfilePage = () => {
               id="firstName"
               value={profile.firstName}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -80,7 +80,7 @@ const ProfilePage = () => {
               id="lastName"
               value={profile.lastName}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -94,7 +94,7 @@ const ProfilePage = () => {
             id="email"
             value={profile.email}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
             required
           />
         </div>
@@ -107,7 +107,7 @@ const ProfilePage = () => {
             id="phone"
             value={profile.phone}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
           />
         </div>
         
@@ -119,7 +119,7 @@ const ProfilePage = () => {
             id="address"
             value={profile.address}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
             required
           />
         </div>
@@ -133,7 +133,7 @@ const ProfilePage = () => {
               id="city"
               value={profile.city}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -145,7 +145,7 @@ const ProfilePage = () => {
               id="state"
               value={profile.state}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -157,7 +157,7 @@ const ProfilePage = () => {
               id="zipCode"
               value={profile.zipCode}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -169,7 +169,7 @@ const ProfilePage = () => {
               id="country"
               value={profile.country}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -182,7 +182,7 @@ const ProfilePage = () => {
             id="preferredPaymentMethod"
             value={profile.preferredPaymentMethod}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600-300 focus:ring focus:ring-blue-600-200 focus:ring-opacity-50"
           >
             <option value="">Select a payment method</option>
             <option value="creditCard">Credit Card</option>
@@ -194,7 +194,7 @@ const ProfilePage = () => {
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-600-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600-500"
           >
             Update Profile
           </button>

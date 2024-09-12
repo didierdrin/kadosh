@@ -37,9 +37,9 @@ export default function ProductCard({ imgUrl, productName, productPrice, discoun
                 <h3 className='text-lg font-semibold text-gray-800 mb-2 truncate'>{productName}</h3>
                 <div className='flex justify-between items-center'>
                     
-                    <p className='text-sm font-bold text-indigo-600'>RWF {commafy(productPrice)}</p>
-                    <button className='bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-black transition-colors duration-300'>
-                    <FaShoppingCart className='text-lg hover:text-teal-100' />
+                    <p className='text-sm font-bold text-blue-600'>RWF {commafy(productPrice)}</p>
+                    <button className='bg-blue-600 text-white px-3 py-1 rounded text-sm font-medium hover:bg-black transition-colors duration-300'>
+                    <FaShoppingCart className='text-lg ' />
                     </button>
                 </div>
             </div>

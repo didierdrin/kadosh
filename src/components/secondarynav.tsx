@@ -57,7 +57,7 @@ const SecondaryNavbar = () => {
         <Menu
           item={[
             { id: 1, title: "Cart", route: "/cart" },
-            { id: 2, title: "Profile", route: "/auth" },
+            { id: 2, title: "My Account", route: "/myaccount" },
             { id: 3, title: "Purchase History", route: "/purchasehistory" },
           ]}
         />
