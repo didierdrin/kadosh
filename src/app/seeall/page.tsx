@@ -1,28 +1,16 @@
-// see all - navigation route
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
+import { useProducts } from "@/components/useproducts"; // Assuming you have a custom hook for Firestore products
 
-import { useRouter } from "next/navigation";
-// Firebase Firestore Data hook
-import { useProducts } from "@/components/useproducts";
-import { FaShoppingCart } from "react-icons/fa";
-
-import { useSearchParams } from "next/navigation";
+const ITEMS_PER_PAGE = 12; // Display 16 items per page
 
 // ListTile component for individual products
 const ListTile = ({ product }: any) => {
-  // Function to format the price with commas
-  function commafy(num: any) {
-    var str = num.toString().split(".");
-    if (str[0].length >= 5) {
-      str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
-    }
-    if (str[1] && str[1].length >= 5) {
-      str[1] = str[1].replace(/(\d{3})/g, "$1 ");
-    }
-    return str.join(".");
-  }
+  const commafy = (num: number) => {
+    return num.toLocaleString();
+  };
 
   return (
     <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[230px] hover:-translate-y-1 cursor-pointer">
@@ -38,64 +26,69 @@ const ListTile = ({ product }: any) => {
           {product.name}
         </h3>
         <p className="text-sm text-blue-600 mb-2 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
-          RWF {commafy(product.price.toFixed(2))}
+          RWF {commafy(product.price)}
         </p>
         <p className="text-sm text-gray-500">
           {product.details.length > 80
             ? `${product.details.substring(0, 80)}...`
             : product.details}
         </p>
-        
       </div>
     </div>
   );
 };
 
-
-
-// Main Seeall component
+// Main SeeallContent component with filters and pagination
 function SeeallContent() {
   const [showFilters, setShowFilters] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState(""); // Filter by category
+  const [minPrice, setMinPrice] = useState(0); // Filter by price range
+  const [maxPrice, setMaxPrice] = useState(Infinity);
+  const [searchTerm, setSearchTerm] = useState(""); // General search for name/description
 
-  const searchParams = useSearchParams();
-  const search = searchParams.get("search");
-  const searchTerm = search || "";
-  const { products, loading, error } = useProducts(searchTerm);
+  const { products, loading, error } = useProducts({
+    searchTerm,
+    selectedCategory,
+    minPrice,
+    maxPrice,
+  });
+
+  const categories = ["All", "Laptops", "Desktops", "Electronics", "Accessories"];
 
   useEffect(() => {
-    // This effect will run when the search term changes
     if (loading) {
-      document.title = "Loading Kadosh..."; // Update title when loading
+      document.title = "Loading Kadosh...";
     } else {
-      document.title = "Kadosh"; // Restore the title once loaded
+      document.title = "Kadosh";
     }
-  }, [searchTerm, loading]);
+  }, [loading]);
 
-  if (loading) return null;
-  // if (loading)
-  //   return (
-  //     <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-100">
-  //       <div className="animate-pulse">
-  //         <FaShoppingCart
-  //           className="text-sky-600 animate-cart-scale"
-  //           size={64}
-  //         />
-  //       </div>
-  //       <p className="mt-4 text-lg font-semibold text-gray-700">
-  //         Loading Kadosh...
-  //       </p>
-  //     </div>
-  //   );
+  if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  // Sample categories for sidebar
-  const categories = [
-    "All",
-    "Laptops",
-    "Desktops",
-    "Electronics",
-    "Accessories",
-  ];
+  // Pagination logic
+  const totalPages = Math.ceil((products?.length || 0) / ITEMS_PER_PAGE);
+  const currentProducts = products?.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const applyFilters = () => {
+    setCurrentPage(1); // Reset to page 1 on filter change
+  };
 
   return (
     <div className="flex flex-col sm:flex-row bg-white min-h-screen">
@@ -121,6 +114,12 @@ function SeeallContent() {
                     <input
                       type="checkbox"
                       className="form-checkbox text-blue-600"
+                      checked={selectedCategory === category}
+                      onChange={() =>
+                        setSelectedCategory(
+                          selectedCategory === category ? "" : category
+                        )
+                      }
                     />
                     <span className="ml-2">{category}</span>
                   </label>
@@ -137,29 +136,37 @@ function SeeallContent() {
                 type="number"
                 placeholder="Min"
                 className="w-1/2 px-2 py-1 border rounded"
+                value={minPrice}
+                onChange={(e) => setMinPrice(Number(e.target.value))}
               />
               <span>-</span>
               <input
                 type="number"
                 placeholder="Max"
                 className="w-1/2 px-2 py-1 border rounded"
+                value={maxPrice === Infinity ? "" : maxPrice}
+                onChange={(e) => setMaxPrice(Number(e.target.value) || Infinity)}
               />
             </div>
           </div>
 
-          {/* Store */}
+          {/* General Search */}
           <div className="mb-6">
-            <h3 className="text-lg font-medium mb-2">Store</h3>
-            <select className="w-full px-2 py-1 border rounded">
-              <option value="">All Stores</option>
-              <option value="Store1">Kadosh</option>
-              <option value="Store2">QuickTech</option>
-              <option value="Store3">MegaPCs</option>
-            </select>
+            <h3 className="text-lg font-medium mb-2">Search</h3>
+            <input
+              type="text"
+              placeholder="Search by name or description"
+              className="w-full px-2 py-1 border rounded"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
 
           {/* Apply Filters Button */}
-          <button className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+          <button
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+            onClick={applyFilters}
+          >
             Apply Filters
           </button>
         </div>
@@ -171,21 +178,18 @@ function SeeallContent() {
           {searchTerm ? `Search Results for "${searchTerm}"` : "All Products"}
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((product) => (
+          {currentProducts.map((product) => (
             <Link
               key={product.id}
-              // href={`/product?id=${product.id}&data=${encodeURIComponent(
-              //   JSON.stringify(product)
-              // )}`}
               href={`/product?id=${product.id}&data=${encodeURIComponent(
                 JSON.stringify({
                   ...product,
-                  img: encodeURIComponent(product.img)
+                  img: encodeURIComponent(product.img),
                 })
               )}`}
               className="block"
               target="_blank"
-  rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
               <ListTile product={product} />
             </Link>
@@ -194,16 +198,30 @@ function SeeallContent() {
         {products.length === 0 && (
           <p className="text-center text-gray-500 mt-8">No products found.</p>
         )}
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center items-center mt-6 space-x-4">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <FaArrowLeft className="text-2xl text-blue-500 hover:text-blue-700" />
+          </button>
+          <span className="text-sm font-medium">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <FaArrowRight className="text-2xl text-blue-500 hover:text-blue-700" />
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
-// Main Seeall component
-export default function Seeall() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <SeeallContent />
-    </Suspense>
-  );
-}
+export default SeeallContent;

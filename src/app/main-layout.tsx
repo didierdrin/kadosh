@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -9,6 +10,7 @@ import FooterNavbar from "@/components/footernav";
 import BackToTop from "@/components/backtotop";
 import StripNavbar from "@/components/stripnavbar"; 
 import { AuthProvider } from "../components/authprovider";
+import { useProducts } from '@/components/useproducts'; // Assuming you have a custom hook for Firestore products
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +27,18 @@ export default function MainLayout({
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const { products, loading, error } = useProducts({
+    searchTerm,
+    selectedCategory,
+  });
+
+  const handleSearchSubmit = (term: string, category: string) => {
+    setSearchTerm(term);
+    setSelectedCategory(category);
+  };
   return (
     <div className={inter.className}>
       <AuthProvider>
@@ -32,7 +46,7 @@ export default function MainLayout({
           <>
             <PrimaryNavbar />
             <hr />
-            <SecondaryNavbar />
+            <SecondaryNavbar onSearchSubmit={handleSearchSubmit} />
             <StripNavbar /> 
           </>
         )}
