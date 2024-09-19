@@ -1,7 +1,7 @@
 
 // all products - USED IN homePAGE.tsx
 "use client";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaShoppingCart } from "react-icons/fa";
 import React, { useState } from "react";
 import Link from "next/link";
 // import product cards
@@ -95,25 +95,25 @@ export default function Allproducts() {
       </div>
 
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-5">
-        <button
-          onClick={handlePreviousPage}
-          disabled={currentPage === 1}
-          className="px-4 py-2 mx-2 cursor-pointer rounded text-sm font-semibold text-white bg-red-500 hover:bg-red-700 "
-        >
-          Previous
-        </button>
-        <span className="text-sm font-medium px-4 py-2">
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 mx-2 cursor-pointer rounded text-sm font-semibold text-white bg-blue-500 hover:bg-blue-700  "
-        >
-          Next
-        </button>
-      </div>
+      <div className="flex justify-center items-center mt-6 space-x-4">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <FaArrowLeft className="text-2xl text-blue-500 hover:text-blue-700" />
+          </button>
+          <span className="text-sm font-medium">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <FaArrowRight className="text-2xl text-blue-500 hover:text-blue-700" />
+          </button>
+        </div>
     </div>
   );
 }

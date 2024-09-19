@@ -158,7 +158,6 @@ export default function Company() {
           <p className="leading-relaxed">
             Kadosh has a rich history of innovation and empowering communities around the world...
           </p>
-
           {/* Add other tab sections as needed */}
         </section>
       </main>
