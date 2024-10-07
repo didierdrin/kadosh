@@ -1,3 +1,5 @@
+
+'use client';
 import React, { useState } from "react";
 import { auth } from "@/components/authprovider";
 import { confirmPasswordReset } from "firebase/auth";

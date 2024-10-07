@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from "react";
 import { auth } from "@/components/authprovider";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
