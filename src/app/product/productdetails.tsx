@@ -5,6 +5,7 @@ import { useAuth } from "@/components/authprovider";
 import { FaShoppingCart, FaDollarSign, FaHeart } from "react-icons/fa";
 import { db } from "@/components/authprovider";
 import { doc, updateDoc, arrayUnion, getDoc, setDoc } from "firebase/firestore";
+import Image from "next/image";
 
 interface Product {
   id: number;

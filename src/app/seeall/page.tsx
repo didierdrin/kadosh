@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation"; // Import useSearchParams
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
 import { useProducts } from "@/components/useproducts"; // Assuming you have a custom hook for Firestore products
-
+import Image from "next/image";
 
 const ITEMS_PER_PAGE = 12;
 
