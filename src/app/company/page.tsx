@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 
 export default function Company() {
   return (
@@ -75,7 +76,7 @@ export default function Company() {
         {/* Sellers and Buyers Info Cards */}
         <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white shadow-md rounded-lg p-6">
-            <img
+            <Image
               src="/path-to-seller-image.jpg"
               alt="Seller Info"
               className="w-full h-48 object-cover rounded-md"
@@ -83,7 +84,7 @@ export default function Company() {
             <p className="mt-4 text-lg text-center">Seller Information</p>
           </div>
           <div className="bg-white shadow-md rounded-lg p-6">
-            <img
+            <Image
               src="/path-to-buyer-image.jpg"
               alt="Buyer Info"
               className="w-full h-48 object-cover rounded-md"
@@ -129,7 +130,7 @@ export default function Company() {
         {/* Our Leaders Section */}
         <section className="mt-16 flex items-center">
           <div className="w-1/2">
-            <img
+            <Image
               src="/path-to-leader-image.jpg"
               alt="Our Leaders"
               className="w-full h-80 object-cover rounded-md"
@@ -151,7 +152,7 @@ export default function Company() {
           {/* Add content for Overview, Our History, etc. below */}
           <h3 className="text-2xl font-bold mb-6">Overview</h3>
           <p className="leading-relaxed">
-            This section contains an overview of Kadosh's vision and mission...
+            This section contains an overview of Kadosh&apos;s vision and mission...
           </p>
 
           <h3 className="text-2xl font-bold mt-10 mb-6">Our History</h3>

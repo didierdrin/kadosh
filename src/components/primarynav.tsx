@@ -6,6 +6,7 @@ import { useAuth } from "../components/authprovider";
 import { db } from "../components/authprovider";
 import { doc, getDoc } from "firebase/firestore";
 import MyKadoshDropdown from "./mykadoshdropdown";
+import Image from "next/image";
 
 const PrimaryNavbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -130,7 +131,7 @@ const PrimaryNavbar = () => {
         <div className="flex flex-col items-center hover:text-teal-500 cursor-pointer">
           {/* Display user image if logged in, otherwise FaUser */}
           {user && profileImage ? (
-            <img
+            <Image
               src={profileImage}
               alt="User Profile"
               className="w-8 h-8 rounded-full object-cover"

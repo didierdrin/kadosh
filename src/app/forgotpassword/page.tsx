@@ -53,7 +53,7 @@ export default function ForgotPassword() {
       {/* Forgot password section */}
       <div className="w-full md:w-1/2 bg-white p-6 md:p-12 flex flex-col justify-center">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-8">
-          Forgot your password?<br /><strong>Don't panic.</strong>
+          Forgot your password?<br /><strong>Don&apos;t panic.</strong>
         </h2>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
         {success && <p className="text-green-500 text-sm mb-4">{success}</p>}

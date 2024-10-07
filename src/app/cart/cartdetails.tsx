@@ -6,6 +6,7 @@ import { useAuth } from '@/components/authprovider';
 import { db } from '@/components/authprovider';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
+import Image from "next/image"; 
 
 interface CartItem {
   id: number;
@@ -136,7 +137,7 @@ export default function Cart() {
             {/* Main image and thumbnail images */}
 <div className="flex flex-row mr-6">
   {/* Main image */}
-  <img
+  <Image
     src={mainImage || item.img[0]}
     alt={item.name}
     className="w-40 h-40 object-cover mr-4 rounded"
@@ -150,7 +151,7 @@ export default function Cart() {
       {/* Thumbnails container with horizontal scroll */}
       <div className="flex flex-col space-y-2 overflow-y-auto scrollbar-hide h-32">
         {item.img.map((imgUrl, index) => (
-          <img
+          <Image
             key={index}
             src={imgUrl}
             alt={`${item.name}-${index}`}
@@ -339,7 +340,7 @@ export default function Cart() {
 //       {cartItems.map((item) => (
 //         <div key={item.id} className="flex items-center justify-between border-b py-4">
 //           <div className="flex items-center">
-//             <img src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" width="20" height="20" />
+//             <Image src={item.img} alt={item.name} className="w-20 h-20 object-cover mr-4" width="20" height="20" />
 //             <div>
 //               <h2 className="text-lg font-semibold">{item.name}</h2>
 //               <p className="text-gray-600">RWF {item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}</p>

@@ -6,6 +6,7 @@ import { useAuth } from "@/components/authprovider";
 import { db } from "@/components/authprovider";
 import { doc, updateDoc, getDoc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Image from "next/image"; 
 
 export default function MyAccount() {
   const { user } = useAuth();
@@ -115,7 +116,7 @@ export default function MyAccount() {
           <div className="bg-white p-4 rounded shadow-md mb-6 border-t border-slate-300">
             <h2 className="text-lg font-semibold mb-4">Your Information</h2>
             {profileImage && (
-              <img
+              <Image
                 src={profileImage}
                 alt="Profile"
                 className="w-24 h-24 rounded-full object-cover mb-4"
@@ -145,7 +146,7 @@ export default function MyAccount() {
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Profile Image</label>
           {profileImage && (
-            <img
+            <Image
               src={profileImage}
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover mb-4 opacity-20"

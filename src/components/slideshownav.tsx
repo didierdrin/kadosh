@@ -79,7 +79,7 @@ export default function SlideshowNavbar() {
       </div>
 
       <div className="flex flex-col items-center cursor-pointer">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
           alt="Computer accessories"
           width="1500"
@@ -112,7 +112,7 @@ export default function SlideshowNavbar() {
       </div>
 
       <div className="flex flex-col items-center cursor-pointer">
-        <img
+        <Image
           src="https://res.cloudinary.com/dezvucnpl/image/upload/v1720125977/c-d-x-PDX_a_82obo-unsplash_rqphy7.jpg"
           alt="Electronic accessories"
           width="1500"

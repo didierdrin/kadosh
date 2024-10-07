@@ -97,7 +97,7 @@ export default function ProductDetails() {
       {/* Image section */}
       <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
         {/* Main image */}
-        <img
+        <Image
           src={mainImage}
           alt={product.name}
           width="1500"
@@ -109,7 +109,7 @@ export default function ProductDetails() {
         {product.img.length > 1 && (
           <div className="flex space-x-2 mt-4">
             {product.img.map((imgUrl, index) => (
-              <img
+              <Image
                 key={index}
                 src={imgUrl}
                 alt={`${product.name}-${index}`}
@@ -257,7 +257,7 @@ export default function ProductDetails() {
 //   return (
 //     <div className="flex flex-wrap -mx-4">
 //       <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-//         <img
+//         <Image
 //           // src={product.img}
 //           src={decodedImgUrl}
 //           alt={product.name}

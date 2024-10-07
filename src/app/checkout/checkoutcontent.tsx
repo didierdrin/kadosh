@@ -6,6 +6,7 @@ import { FaLock, FaCreditCard, FaMobile, FaPaypal } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { doc, getFirestore, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
+import Image from "next/image"; 
 
 interface Product {
   id: number;
@@ -348,7 +349,7 @@ export default function CheckoutContent() {
               <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
               {cartItems.map((item) => (
                 <div key={item.id} className="mb-4">
-                  <img
+                  <Image
                     src={mainImage} // Main image for the item
                     alt={item.name}
                     className="w-full h-40 object-cover rounded mb-2"
@@ -357,7 +358,7 @@ export default function CheckoutContent() {
                   {item.img.length > 1 && (
                     <div className="flex space-x-2">
                       {item.img.map((imgUrl, index) => (
-                        <img
+                        <Image
                           key={index}
                           src={imgUrl}
                           alt={`${item.name}-${index}`}
@@ -791,7 +792,7 @@ export default function CheckoutContent() {
 //                   key={item.id}
 //                   className="flex items-center mb-4 border-b pb-4"
 //                 >
-//                   <img
+//                   <Image
 //                     src={item.img}
 //                     alt={item.name}
 //                     width="50"
