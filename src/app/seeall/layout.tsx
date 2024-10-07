@@ -7,3 +7,5 @@ export default function HomeLayout({
 }) {
   return <MainLayout>{children}</MainLayout>;
 }
+
+export const dynamic = 'force-dynamic';

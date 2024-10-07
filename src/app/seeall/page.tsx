@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation"; // Import useSearchParams
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
@@ -95,7 +95,7 @@ function SeeallContent() {
   };
 
   return (
-    <Suspense fallback={<div>Loading filters...</div>}>
+    
     <div className="flex flex-col sm:flex-row bg-white min-h-screen">
       {/* Sidebar - with filters */}
       <div className="w-full sm:w-1/4 bg-slate-50 p-4 shadow-md">
@@ -179,7 +179,7 @@ function SeeallContent() {
         </div>
       </div>
     </div>
-    </Suspense>
+ 
   );
 }
 
