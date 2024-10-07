@@ -110,14 +110,18 @@ export default function Login({ setIsLogin }: { setIsLogin: (isLogin: boolean) =
       </div>
 
       {/* Welcome Section */}
-      <div className="hidden md:flex w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex-col justify-between">
+      {/* <div className="hidden md:flex w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex-col justify-between"> */}
+      <div 
+  className="hidden md:flex w-1/2 m-8 rounded-sm text-white p-12 flex-col justify-between bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/bgimg.png')" }}
+>
         <div>
           <h1 className="text-4xl font-bold mb-4">Kadosh</h1>
           <p className="text-xl mb-8">Durable electronics</p>
         </div>
         <div className="space-y-4">
-          <p className="text-lg">Discover amazing deals, shop with ease, and elevate your office with Kadosh</p>
-          <p className="text-sm opacity-75">Join thousands of users who have already trusted Kadosh.</p>
+          <p className="text-sm">Discover amazing deals, shop with ease, and elevate your office with Kadosh</p>
+          <p className="text-xs opacity-75">Join thousands of users who have already trusted Kadosh.</p>
         </div>
       </div>
     </div>

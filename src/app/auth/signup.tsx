@@ -210,7 +210,11 @@ export default function Signup({
       </div>
 
       {/* Welcome Section */}
-      <div className="hidden md:flex w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex-col justify-between">
+      {/* <div className="hidden md:flex w-1/2 m-8 rounded-sm bg-blue-500 text-white p-12 flex-col justify-between"> */}
+      <div 
+  className="hidden md:flex w-1/2 m-8 rounded-sm text-white p-12 flex-col justify-between bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/bgimg.png')" }}
+>
         <div>
           <h1 className="text-4xl font-bold mb-4">Kadosh</h1>
           <p className="text-xl mb-8">Durable electronics</p>
