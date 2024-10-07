@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { auth } from "@/components/authprovider";
 import { confirmPasswordReset } from "firebase/auth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function ResetPassword() {
   const [verificationCode, setVerificationCode] = useState("");
