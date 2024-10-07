@@ -7,9 +7,8 @@ export async function POST(req: Request) {
   try {
     const { to, params } = await req.json(); // Extract email address and params from request
 
-    // Replace placeholders in the email template with actual parameters
-    const html = emailTemplate;  
-    //emailTemplate.replace('{{name}}', params.name);
+    // Call emailTemplate with the params to generate the HTML string
+    const html = emailTemplate(params);  
 
     // Nodemailer transport configuration
     const transporter = nodemailer.createTransport({
@@ -27,7 +26,7 @@ export async function POST(req: Request) {
       from: `"Kadosh" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`,
       to: to,
       subject: 'Welcome to Kadosh',
-      html: html, // Send the compiled HTML template
+      html: html, // Send the compiled HTML template as a string
     };
 
     // Send the email
