@@ -34,9 +34,7 @@ export default function MyAccount() {
       const fetchUserData = async () => {
         const userDocRef = doc(
           db,
-          "users",
-          "qWE5sgjt0RRhtHDqwciu",
-          "client_data",
+          "client_data_new",
           user.uid
         );
         const docSnap = await getDoc(userDocRef);
@@ -86,9 +84,7 @@ export default function MyAccount() {
     if (user) {
       const userDocRef = doc(
         db,
-        "users",
-        "qWE5sgjt0RRhtHDqwciu",
-        "client_data",
+        "client_data_new",
         user.uid
       );
 

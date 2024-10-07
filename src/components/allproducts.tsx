@@ -69,24 +69,44 @@ export default function Allproducts() {
           {currentProducts && currentProducts.length > 0 ? (
             currentProducts.map((product, index) => (
               <Link
-                key={product.id || `product-${index}`}
-                href={`/product?id=${product.id}&data=${encodeURIComponent(
-                  JSON.stringify({
-                    ...product,
-                    img: encodeURIComponent(product.img)
-                  })
-                )}`}
-                className="block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Productcard
-                  imgUrl={product.img}
-                  productName={product.name}
-                  productPrice={product.price}
-                  discountPercentage={null}
-                />
-              </Link>
+  key={product.id || `product-${index}`}
+  href={`/product?id=${product.id}&data=${encodeURIComponent(
+    JSON.stringify({
+      ...product,
+      img: product.img.join(","), // Join the array into a single string
+    })
+  )}`}
+  className="block"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Productcard
+    imgUrl={product.img[0]} // Use the first image as the thumbnail
+    productName={product.name}
+    productPrice={product.price}
+    discountPercentage={null}
+  />
+</Link>
+
+              // <Link
+              //   key={product.id || `product-${index}`}
+              //   href={`/product?id=${product.id}&data=${encodeURIComponent(
+              //     JSON.stringify({
+              //       ...product,
+              //       img: encodeURIComponent(product.img)
+              //     })
+              //   )}`}
+              //   className="block"
+              //   target="_blank"
+              //   rel="noopener noreferrer"
+              // >
+              //   <Productcard
+              //     imgUrl={product.img}
+              //     productName={product.name}
+              //     productPrice={product.price}
+              //     discountPercentage={null}
+              //   />
+              // </Link>
             ))
           ) : (
             <div>No products available</div>

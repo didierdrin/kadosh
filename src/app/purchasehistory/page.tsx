@@ -23,13 +23,7 @@ export default function PurchaseHistory() {
     const fetchRecentOrders = async () => {
       if (user) {
         try {
-          const userDocRef = doc(
-            db,
-            "users",
-            "qWE5sgjt0RRhtHDqwciu",
-            "client_data",
-            user.uid
-          );
+          const userDocRef = doc(db, "client_data_new", user.uid);
           const docSnap = await getDoc(userDocRef);
           if (docSnap.exists()) {
             const data = docSnap.data();

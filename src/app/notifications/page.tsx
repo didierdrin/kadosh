@@ -26,9 +26,7 @@ export default function Notifications() {
     if (user) {
       const userDocRef = doc(
         db,
-        "users",
-        "qWE5sgjt0RRhtHDqwciu",
-        "client_data",
+        "client_data_new",
         user.uid
       );
 

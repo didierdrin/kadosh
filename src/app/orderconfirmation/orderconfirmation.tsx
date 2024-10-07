@@ -30,36 +30,6 @@ const OrderConfirmation: React.FC = () => {
 
   
 
-  // const fetchOrderData = async () => {
-  //   if (!user) {
-  //     console.error('User not authenticated');
-  //     return;
-  //   }
-
-  //   const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
-
-  //   try {
-  //     const docSnap = await getDoc(userDocRef);
-
-  //     if (docSnap.exists()) {
-  //       const userData = docSnap.data();
-  //       const currentOrders = userData.current_orders || [];
-
-  //       if (currentOrders.length > 0) {
-  //         const mostRecentOrder = currentOrders[currentOrders.length - 1];
-  //         setOrder(mostRecentOrder);
-  //       } else {
-  //         console.log('No orders found');
-  //       }
-  //     } else {
-  //       console.log('No such document!');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching order data:', error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -71,7 +41,7 @@ const OrderConfirmation: React.FC = () => {
               return;
             }
   
-            const userDocRef = doc(db, 'users', 'qWE5sgjt0RRhtHDqwciu', 'client_data', user.uid);
+            const userDocRef = doc(db, 'client_data_new', user.uid);
   
             try {
               const docSnap = await getDoc(userDocRef);
