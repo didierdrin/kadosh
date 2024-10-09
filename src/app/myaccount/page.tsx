@@ -113,15 +113,20 @@ export default function MyAccount() {
     <div className="flex flex-col">
     <div className="mx-2 mt-4 mb-4">
     {!isEditing && customerInfoAvailable && (
-          <div className="bg-white p-4 rounded shadow-md mb-6 border-t border-slate-300">
+          <div className="flex space-x-[80px] bg-white p-4 rounded shadow-md mb-6 border-t border-slate-300">
+            <div>
             <h2 className="text-lg font-semibold mb-4">Your Information</h2>
             {profileImage && (
               <Image
                 src={profileImage}
                 alt="Profile"
                 className="w-24 h-24 rounded-full object-cover mb-4"
+                width="24"
+                height="24"
               />
             )}
+            </div>
+            <div>
             <p><strong>First Name:</strong> {firstName || "Not added"}</p>
             <p><strong>Last Name:</strong> {lastName || "Not added"}</p>
             <p><strong>Age:</strong> {age || "Not added"}</p>
@@ -133,6 +138,7 @@ export default function MyAccount() {
             >
               Edit Profile
             </button>
+            </div>
           </div>
         )}
     </div>
@@ -150,6 +156,8 @@ export default function MyAccount() {
               src={profileImage}
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover mb-4 opacity-20"
+              height="24" 
+              width="24"
             />
           )}
           <input

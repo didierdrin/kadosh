@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const { to, verificationCode } = await req.json(); // Extract email and verification code from the request
 
     // Compile the email template with the verification code
-    const html = emailTemplate(verificationCode); 
+    const html = emailTemplate({ verificationCode }); 
 
     // Nodemailer transport configuration
     const transporter = nodemailer.createTransport({

@@ -156,6 +156,8 @@ export default function Cart() {
             src={imgUrl}
             alt={`${item.name}-${index}`}
             className="w-12 h-12 object-cover rounded cursor-pointer"
+            height="12" 
+            width="12"
             onClick={() => setMainImage(imgUrl)} // Set the clicked image as the main image
           />
         ))}

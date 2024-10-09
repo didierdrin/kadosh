@@ -353,6 +353,8 @@ export default function CheckoutContent() {
                     src={mainImage} // Main image for the item
                     alt={item.name}
                     className="w-full h-40 object-cover rounded mb-2"
+                    height="40"
+                    width="40"
                   />
                   {/* Thumbnails for other images */}
                   {item.img.length > 1 && (
@@ -363,6 +365,8 @@ export default function CheckoutContent() {
                           src={imgUrl}
                           alt={`${item.name}-${index}`}
                           className="w-12 h-12 object-cover rounded cursor-pointer"
+                          width="12"
+                          height="12"
                           onClick={() => setMainImage(imgUrl)} // Change the main image on click
                         />
                       ))}

@@ -9,12 +9,16 @@
 # testing
 /coverage
 
+
+
 # next.js
 /.next/
 /out/
 
 # production
 /build
+
+firebase-adminsdk.json
 
 # misc
 .DS_Store

@@ -12,6 +12,7 @@ import StripNavbar from "@/components/stripnavbar";
 import { AuthProvider } from "../components/authprovider";
 import { useProducts } from '@/components/useproducts'; // Assuming you have a custom hook for Firestore products
 import "./globals.css";
+import MessageIconButton from  "@/components/messageiconbutton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -62,6 +63,7 @@ const handleCategorySelect = (category: string) => {
         {children}
         {!isHomePage && (
           <>
+            <MessageIconButton />
             <BackToTop />
             <FooterNavbar />
           </>

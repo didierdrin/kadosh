@@ -13,22 +13,22 @@ export default function FooterNavbar() {
           <h4 className="font-bold mb-3 text-base lg:text-lg">Buy</h4>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:underline hover:text-teal-500">
+              <a href="/auth" className="hover:underline hover:text-teal-500">
                 Registration
               </a>
             </li>
             <li>
-              <a href="/" className="hover:underline hover:text-teal-500">
+              <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-teal-500">
                 Kadosh Refund Policy
               </a>
             </li>
             <li>
-              <a href="/" className="hover:underline hover:text-teal-500">
+              <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-teal-500">
                 Bidding & buying help
               </a>
             </li>
             <li>
-              <a href="/" className="hover:underline hover:text-teal-500">
+              <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-teal-500">
                 Stores
               </a>
             </li>
@@ -245,7 +245,7 @@ export default function FooterNavbar() {
               </a>
             </li>
             <li>
-              <a href="/" className="hover:underline hover:text-teal-500">
+              <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-teal-500">
                 Contact us
               </a>
             </li>

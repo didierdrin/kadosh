@@ -1,4 +1,4 @@
-export const emailTemplate = ({verificationCode}: { verificationCode: string}) => `
+export const emailTemplate = ({ resetLink }: { resetLink: string }) => `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -39,11 +39,13 @@ table {
             <tr><th width="100%" valign="top" class="r4-c" style="font-weight: normal;">
               <table cellspacing="0" cellpadding="0" border="0" role="presentation" width="600" align="center" class="r0-o" style="table-layout: fixed;">
                 <tr><td class="r6-i" style="padding-top: 14px;">
-                  <h2 style="color: #4F1337; font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: center;">Password Reset Verification</h2>
+                  <h2 style="color: #4F1337; font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: center;">Password Reset Request</h2>
                   <p style="color: #26081A; font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center; line-height: 1.5;">
-                    Hi, <br/> You requested to reset your password. Please use the verification code below to complete the process:
+                    Hi, <br/> You requested to reset your password. Please click the link below to complete the process:
                   </p>
-                  <h1 style="color: #4FA68F; font-size: 36px; text-align: center;">${verificationCode}</h1>
+                  <p style="color: #4FA68F; font-size: 16px; text-align: center;">
+                    <a href="${resetLink}" target="_blank" style="color: #d06224; text-decoration: none;">Reset Your Password</a>
+                  </p>
                   <p style="color: #26081A; font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">
                     If you did not request a password reset, please ignore this email.
                   </p>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { FaBell, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaBell, FaShoppingCart, FaUser, FaExclamationTriangle } from "react-icons/fa";
 import { useAuth } from "../components/authprovider";
 import { db } from "../components/authprovider";
 import { doc, getDoc } from "firebase/firestore";
@@ -80,7 +80,7 @@ const PrimaryNavbar = () => {
         )}
       </div>
 
-      <a href="/" className="hover:text-teal-500">
+      <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500">
         Contact Us
       </a>
 
@@ -93,23 +93,26 @@ const PrimaryNavbar = () => {
           <>
             Shipping to
             <br />
-            {shippingAddress}
+            <strong>{shippingAddress}</strong>
           </>
         ) : (
           <>
             Shipping Address
             <br />
-            Not Added
+            <div className="flex items-center space-x-1 hover:translate-x-1">
+  <FaExclamationTriangle className="text-red-400" />
+  <span className="text-red-400">Not Added</span>
+</div>
           </>
         )}
       </a>
 
       <div></div>
-      <a href="/" className="text-xs hover:text-teal-500">
+      <a href="/ordersnreturns" className="text-xs hover:text-teal-500">
         Orders
         <br />& Returns
       </a>
-      <a href="/cart" className="hover:text-teal-500">
+      <a href="/watchlist" className="hover:text-teal-500">
         Watchlist
       </a>
       <MyKadoshDropdown />
@@ -135,6 +138,8 @@ const PrimaryNavbar = () => {
               src={profileImage}
               alt="User Profile"
               className="w-8 h-8 rounded-full object-cover"
+              height="8"
+              width="8"
             />
           ) : (
             <>

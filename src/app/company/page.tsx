@@ -80,6 +80,8 @@ export default function Company() {
               src="/path-to-seller-image.jpg"
               alt="Seller Info"
               className="w-full h-48 object-cover rounded-md"
+              height="48"
+              width="48"
             />
             <p className="mt-4 text-lg text-center">Seller Information</p>
           </div>
@@ -88,6 +90,8 @@ export default function Company() {
               src="/path-to-buyer-image.jpg"
               alt="Buyer Info"
               className="w-full h-48 object-cover rounded-md"
+              height="48"
+              width="48"
             />
             <p className="mt-4 text-lg text-center">Buyer Information</p>
           </div>
@@ -134,6 +138,8 @@ export default function Company() {
               src="/path-to-leader-image.jpg"
               alt="Our Leaders"
               className="w-full h-80 object-cover rounded-md"
+              width="80"
+              height="80"
             />
           </div>
           <div className="w-1/2 p-8">

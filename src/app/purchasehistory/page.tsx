@@ -47,7 +47,7 @@ export default function PurchaseHistory() {
   }, [user]);
 
   if (loading) {
-    return <div>Loading purchase history...</div>;
+    return <div className="h-[300px] items-center">Loading...</div>;
   }
 
   return (
