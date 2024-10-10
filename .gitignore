@@ -18,7 +18,7 @@
 # production
 /build
 
-# firebase-adminsdk.json
+firebase-adminsdk.json
 
 # misc
 .DS_Store
@@ -30,7 +30,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-#.env*.local
+.env*.local
+.env 
 
 # vercel
 .vercel
