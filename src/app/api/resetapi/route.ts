@@ -5,7 +5,8 @@ import { emailTemplate } from '@/components/resetemail';
 
 // Initialize Firebase Admin SDK if not initialized already
 if (!admin.apps.length) {
-  const serviceAccount = require('../../../../firebase-adminsdk.json'); // Correct path to your service account file
+  //const serviceAccount = require('../../../../firebase-adminsdk.json'); // Correct path to your service account file
+  const serviceAccount = JSON.parse(process.env.firebase_admin_credentials as string);
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
