@@ -1,12 +1,17 @@
 import React from "react";
 import Image from "next/image"; 
 
-export default function Company() {
+
+export default function Company() { 
+
+  
   return (
     <div className="min-h-screen flex flex-col">
       {/* Top Navigation Bar */}
       <nav className="bg-blue-600 text-white py-4 px-8 flex justify-between items-center">
-        <div className="text-4xl font-bold">Kadosh</div>
+        <div className="text-4xl font-bold">
+          <a href="/home" className="cursor-pointer">Kadosh</a>
+        </div>
         <div className="space-x-6 text-lg">
           <a href="#company" className="hover:text-teal-400">
             Company

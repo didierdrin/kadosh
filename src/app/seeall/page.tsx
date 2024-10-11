@@ -17,7 +17,7 @@ const ListTile = ({ product }: any) => {
   return (
     <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[230px] hover:-translate-y-1 cursor-pointer">
       <Image
-        src={product.img}
+        src={product.img[0]}
         alt={product.name}
         width="1500"
         height="1500"
