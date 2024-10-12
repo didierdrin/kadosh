@@ -95,7 +95,8 @@ export default function Watchlist() {
   }
 
   if (loading) {
-    return <div className="text-center py-10">Loading watchlist...</div>;
+    return <div className="h-[300px] flex items-center justify-center ">Loading...</div>;
+    //return <div className="text-center py-10">Loading watchlist...</div>;
   }
 
   if (watchlistItems.length === 0) {

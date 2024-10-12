@@ -47,12 +47,12 @@ export default function PurchaseHistory() {
   }, [user]);
 
   if (loading) {
-    return <div className="h-[300px] items-center">Loading...</div>;
+    return <div className="h-[300px] flex items-center justify-center ">Loading...</div>;
   }
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Purchase History</h2>
+      <h2 className="text-2xl font-bold mt-4 mb-4">Purchase History</h2>
       {recentOrders.length > 0 ? (
         <table className="min-w-full bg-white border border-gray-200">
           <thead>
@@ -83,8 +83,11 @@ export default function PurchaseHistory() {
           </tbody>
         </table>
       ) : (
-        <p>No recent orders found.</p>
-      )}
+        <div className="h-[200px]">
+          <p>No recent orders found.</p>
+
+        </div> 
+              )}
     </div>
   );
 }

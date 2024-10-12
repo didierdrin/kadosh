@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "@/components/authprovider";
 import { setCookie } from "cookies-next";
@@ -14,8 +14,20 @@ export default function Login({ setIsLogin }: { setIsLogin: (isLogin: boolean) =
   const [error, setError] = useState("");
   const { login } = useAuth();
   const router = useRouter();
+  const [loading, setLoading] = useState(false); // Add loading state
+
+  useEffect(() => {
+    // Update the title when loading starts or stops
+    if (loading) {
+      document.title = "Loggin in...";
+    } else {
+      document.title = "Login - Kadosh";
+    }
+  }, [loading]);
 
   const navigatetoForgotpassword = () => {
+    document.title = "Forgot Password...";
+    window.location.href = "/forgotpassword";
     router.push("/forgotpassword");
   };
 
@@ -23,27 +35,36 @@ export default function Login({ setIsLogin }: { setIsLogin: (isLogin: boolean) =
     e.preventDefault();
     setError("");
 
+    setLoading(true); 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const token = await userCredential.user.getIdToken();
       setCookie("auth_token", token, { maxAge: 60 * 60 * 24 * 7 }); // 1 week
       login(email, password);
+      setLoading(false);
+      window.location.href = "/home";
+      router.push("/home");
     } catch (err) {
       setError("Failed to log in. Please check your email/password.");
       console.error(err);
+      setLoading(false);
     }
   };
 
   const handleGoogleSignIn = async () => {
+    setLoading(true); 
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
       const token = await result.user.getIdToken();
       setCookie("auth_token", token, { maxAge: 60 * 60 * 24 * 7 }); // 1 week
+      setLoading(false); 
+      window.location.href = "/home";
       router.push("/home");
     } catch (error) {
       setError("Failed to log in with Google. Please try again.");
       console.error(error);
+      setLoading(false); 
     }
   };
 

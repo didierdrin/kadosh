@@ -34,7 +34,8 @@ export default function ForgotPassword() {
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
       <div className="w-full md:w-1/2 bg-white p-6 md:p-12 flex flex-col justify-center">
-      <Link
+      <Link 
+      onClick={() => {window.location.href = "/auth";}}
         href="/auth"
         className="text-blue-600 hover:underline mb-4 inline-block"
       >

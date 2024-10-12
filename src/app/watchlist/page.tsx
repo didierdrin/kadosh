@@ -9,8 +9,9 @@ const DynamicWatchlistDetails = dynamic(() => import('./watchlistdetails'), {
 });
 
 export default function WatchlistPage() {
+  
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container h-[300px] mx-auto px-4 py-8">
       <Link
         href="/seeall"
         className="text-blue-600 hover:underline mb-4 inline-block"

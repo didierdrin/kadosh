@@ -56,7 +56,7 @@ export default function Notifications() {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Notifications</h2>
+      <h2 className="text-2xl font-bold mt-4 mb-4">Notifications</h2>
       {notifications.length > 0 ? (
         <ul className="bg-white shadow rounded p-4">
           {notifications.map((notification, index) => (
@@ -69,7 +69,10 @@ export default function Notifications() {
           ))}
         </ul>
       ) : (
-        <p>No notifications yet.</p>
+
+        <div className="h-[200px]">
+          <p>No notifications yet.</p>
+        </div>
       )}
     </div>
   );

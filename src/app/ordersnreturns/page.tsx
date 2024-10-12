@@ -50,7 +50,7 @@ export default function OrdersAndReturns() {
   const filteredOrders = orders.filter((order) => order.status === activeTab);
 
   if (loading) {
-    return <div className="h-[300px] items-center">Loading...</div>;
+    return <div className="h-[300px] flex items-center justify-center ">Loading...</div>;
   }
 
   return (
