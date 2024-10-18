@@ -64,7 +64,8 @@ export default function Company() {
         {/* Slideshow Section */}
         <div className="h-[800px] bg-gray-200 flex items-center justify-center">
           {/* Replace with your slideshow component */}
-          <p className="text-2xl">Slideshow Placeholder (800px height)</p>
+          {/* <p className="text-2xl">Slideshow Placeholder (800px height)</p> */}
+          <Image src="/company1.png" alt="Company img" height="800" width="2000" />
         </div>
 
         {/* Pathways Description */}
@@ -82,21 +83,21 @@ export default function Company() {
         <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white shadow-md rounded-lg p-6">
             <Image
-              src="/path-to-seller-image.jpg"
+              src="/companyseller.png"
               alt="Seller Info"
               className="w-full h-48 object-cover rounded-md"
-              height="48"
-              width="48"
+              height="700"
+              width="700"
             />
             <p className="mt-4 text-lg text-center">Seller Information</p>
           </div>
           <div className="bg-white shadow-md rounded-lg p-6">
             <Image
-              src="/path-to-buyer-image.jpg"
+              src="/companybuyer.png"
               alt="Buyer Info"
               className="w-full h-48 object-cover rounded-md"
-              height="48"
-              width="48"
+              height="700"
+              width="700"
             />
             <p className="mt-4 text-lg text-center">Buyer Information</p>
           </div>
@@ -107,7 +108,8 @@ export default function Company() {
           <h2 className="text-2xl font-bold mb-6">Our Purpose in Action</h2>
           <div className="bg-gray-800 text-white h-[400px] flex items-center justify-center">
             {/* Placeholder for the video */}
-            <p>Video Section (400px height)</p>
+            {/* <p>Video Section (400px height)</p> */} 
+            <Image src="/electronics2.png" alt="video section" height="400" width="2000" />
           </div>
         </section>
 
@@ -117,19 +119,19 @@ export default function Company() {
           <div className="flex justify-around">
             <div className="flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-teal-500 flex items-center justify-center text-white text-2xl">
-                190+
+                1+
               </div>
               <p className="mt-4">Countries Reached</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-teal-500 flex items-center justify-center text-white text-2xl">
-                1M+
+                1K+
               </div>
               <p className="mt-4">Sellers Empowered</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-teal-500 flex items-center justify-center text-white text-2xl">
-                2M+
+                20K+
               </div>
               <p className="mt-4">Transactions Daily</p>
             </div>
@@ -140,11 +142,11 @@ export default function Company() {
         <section className="mt-16 flex items-center">
           <div className="w-1/2">
             <Image
-              src="/path-to-leader-image.jpg"
+              src="/bgimg.png"
               alt="Our Leaders"
               className="w-full h-80 object-cover rounded-md"
-              width="80"
-              height="80"
+              width="800"
+              height="800"
             />
           </div>
           <div className="w-1/2 p-8">

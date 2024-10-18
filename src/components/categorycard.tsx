@@ -14,17 +14,26 @@ export default function Categorycard({ imgUrl, productName }: any) {
   };
 
   return (
-    <div className="flex flex-col items-center hover:border-b border-black cursor-pointer" onClick={handleCategorySelect}>
-      <div className="w-40 h-40 bg-white rounded-full shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-        <Image src={imgUrl} alt={productName} className="object-cover w-full h-full" width="1500" height="1500" />
+    <div
+      className="pt-2 flex flex-col items-center hover:border-b border-black cursor-pointer"
+      onClick={handleCategorySelect}
+    >
+      <div className="relative w-40 h-40 rounded-full transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
+        <Image
+          src={imgUrl}
+          alt={productName}
+          className="object-cover w-full h-full rounded-full"
+          width="1500"
+          height="1500"
+        />
+        <div className="absolute inset-0 bg-black rounded-full bg-opacity-50"></div>{" "}
+        {/* Dark overlay */}
       </div>
-      <span className="mt-3">
-        {productName}
-      </span>
+  
+      <span className="mt-3">{productName}</span>
     </div>
   );
 }
-
 
 // // category card
 // import Image from "next/image";

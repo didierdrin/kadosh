@@ -20,6 +20,11 @@ interface UseProductsProps {
   selectedCategory?: string;
   minPrice?: number;
   maxPrice?: number;
+  selectedBrand?: string;
+  selectedRating?: string;
+  inStockOnly?: any; 
+  discountOnly?: any; 
+  sortOption?: any; 
 }
 
 export function useProducts({

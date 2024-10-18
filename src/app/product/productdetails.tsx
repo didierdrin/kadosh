@@ -89,52 +89,7 @@ export default function ProductDetails() {
     }
   };
   
-  // const product: Product | null = productData 
-  //   ? {
-  //       ...JSON.parse(decodeURIComponent(productData)),
-  //       img: decodeURIComponent(JSON.parse(decodeURIComponent(productData)).img).split(",") // Convert the string back to an array
-  //     }
-  //   : null;
-
-  // // Set the first image as the main image
-  // const [mainImage, setMainImage] = useState<string>(product?.img[0] || "");
-
-  // if (!product) return <div className="text-center py-10">Product not found</div>;
-
-  // const handleAddToWatchlist = async () => {
-  //   if (!user) {
-  //     router.push("/auth");
-  //   } else {
-  //     try {
-  //       const userDocRef = doc(db, "client_data_new", user.uid);
-  //       const docSnap = await getDoc(userDocRef);
-
-  //       const watchlistItem = {
-  //         id: product.id,
-  //         name: product.name,
-  //         price: product.price,
-  //         details: product.details,
-  //         img: product.img,
-  //         manufacturer: product.manufacturer,
-  //         model: product.model,
-  //         category: product.category,
-  //       };
-
-  //       if (!docSnap.exists()) {
-  //         await setDoc(userDocRef, { watchlist: [watchlistItem] });
-  //       } else {
-  //         await updateDoc(userDocRef, {
-  //           watchlist: arrayUnion(watchlistItem),
-  //         });
-  //       }
-
-  //       console.log("Added to watchlist");
-  //       // Optionally, you can show a notification or update the UI to reflect the change
-  //     } catch (error) {
-  //       console.error("Error adding to watchlist: ", error);
-  //     }
-  //   }
-  // };
+  
 
   const handleAddToCart = async () => {
     if (!user) {
