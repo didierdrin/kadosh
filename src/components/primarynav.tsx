@@ -15,6 +15,8 @@ const PrimaryNavbar = () => {
 
   const [shippingAddress, setShippingAddress] = useState<string | null>(null);
   const [profileImage, setProfileImage] = useState<string | null>(null);
+  const [cartItemCount, setCartItemCount] = useState<number>(0);
+  const [watchlistItemCount, setWatchlistItemCount] = useState<number>(0);
 
   useEffect(() => {
     if (user) {
@@ -38,6 +40,10 @@ const PrimaryNavbar = () => {
           }
           // Set profile image if available
           setProfileImage(data.customer_info?.profileImage || null);
+          // set cart item count 
+          setCartItemCount(data.cart?.length || 0);
+          // set watchlist item count
+          setWatchlistItemCount(data.watchlist?.length || 0);
         }
       };
       fetchUserData();
@@ -112,9 +118,19 @@ const PrimaryNavbar = () => {
         Orders
         <br />& Returns
       </a>
-      <a href="/watchlist" className="hover:text-teal-500">
+      <div className="flex items-center">
+  <a href="/watchlist" className="hover:text-teal-500 mr-1">
+    Watchlist
+  </a>
+  {watchlistItemCount > 0 && (
+    <span className="bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+      {watchlistItemCount}
+    </span>
+  )}
+</div>
+      {/* <a href="/watchlist" className="hover:text-teal-500">
         Watchlist
-      </a>
+      </a> */}
       <MyKadoshDropdown />
       <div className="flex flex-col items-center mt-1 hover:text-teal-500 cursor-pointer">
         <a href="/notifications">
@@ -122,12 +138,18 @@ const PrimaryNavbar = () => {
         </a>
         <span className="text-[11px]">Notifications</span>
       </div>
-      <div className="flex flex-col items-center mt-1 hover:text-teal-500 cursor-pointer">
+      <div className="flex flex-col items-center mt-1 hover:text-teal-500 cursor-pointer relative">
         <a href="/cart">
           <FaShoppingCart className="text-lg" />
+          {cartItemCount > 0 && (
+            <span className="absolute top-[1px] -right-2 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+              {cartItemCount}
+            </span>
+          )}
         </a>
         <span className="text-[11px]">Cart</span>
       </div>
+    
 
       {/* Profile and Dropdown */}
       <div className="relative group mr-2">

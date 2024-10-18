@@ -6,6 +6,8 @@ import { setCookie } from "cookies-next";
 import { useAuth } from "@/components/authprovider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { getFirestore, doc, setDoc } from "firebase/firestore"; // Import Firestore
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useRouter } from "next/navigation"; 
 
 const firestore = getFirestore(); // Initialize Firestore
 
@@ -24,7 +26,8 @@ export default function Signup({
   const [error, setError] = useState("");
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
-
+  const router = useRouter();
+  
   useEffect(() => {
     // Update the title when loading starts or stops
     if (loading) {
@@ -99,6 +102,23 @@ export default function Signup({
       setError("Failed to create an account. Please try again.");
       console.error(err);
       setLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    setLoading(true); 
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const token = await result.user.getIdToken();
+      setCookie("auth_token", token, { maxAge: 60 * 60 * 24 * 7 }); // 1 week
+      setLoading(false); 
+      window.location.href = "/home";
+      router.push("/home");
+    } catch (error) {
+      setError("Failed to log in with Google. Please try again.");
+      console.error(error);
+      setLoading(false); 
     }
   };
 
@@ -229,6 +249,12 @@ export default function Signup({
             className="text-blue-600 hover:underline"
           >
             Already have an account? Log In
+          </button>
+        </div>
+        <div className="text-center mt-4">
+          <hr className="mb-4 border-t border-slate-200 border-0 h-px bg-slate-500" />
+          <button onClick={handleGoogleSignIn} className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition duration-300">
+            Continue with Google
           </button>
         </div>
         <br />

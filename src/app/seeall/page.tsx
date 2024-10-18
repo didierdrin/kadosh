@@ -15,7 +15,7 @@ const ListTile = ({ product }: any) => {
   };
 
   return (
-    <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[230px] hover:-translate-y-1 cursor-pointer">
+    <div className="border rounded-lg p-4 mb-4 overflow-hidden flex items-start h-[280px] hover:-translate-y-1 cursor-pointer">
       <Image
         src={product.img[0]}
         alt={product.name}
@@ -23,11 +23,11 @@ const ListTile = ({ product }: any) => {
         height="1500"
         className="w-24 h-24 object-cover mr-4"
       />
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col justify-start space-y-3 h-full">
         <h3 className="text-lg font-semibold overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           {product.name}
         </h3>
-        <p className="text-sm text-blue-600 mb-2 mt-1 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
+        <p className="text-sm text-blue-600 overflow-hidden whitespace-nowrap text-ellipsis max-w-full">
           RWF {commafy(product.price)}
         </p>
         <p className="text-sm text-gray-500">
@@ -68,7 +68,7 @@ function SeeallContent() {
     }
   }, [loading]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="h-[300px] flex justify-center items-center">Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   // Pagination logic

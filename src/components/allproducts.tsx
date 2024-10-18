@@ -80,10 +80,11 @@ export default function Allproducts() {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <Productcard
-    imgUrl={product.img[0]} // Use the first image as the thumbnail
-    productName={product.name}
-    productPrice={product.price}
+  <Productcard 
+  product={product}
+    //imgUrl={product.img[0]} // Use the first image as the thumbnail
+    //productName={product.name}
+    //productPrice={product.price}
     discountPercentage={null}
   />
 </Link>
