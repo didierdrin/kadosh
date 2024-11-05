@@ -48,7 +48,7 @@ const OrderConfirmation: React.FC = () => {
   
               if (docSnap.exists()) {
                 const userData = docSnap.data();
-                const currentOrders = userData.current_orders || [];
+                const currentOrders = userData.pending_orders || [];
   
                 if (currentOrders.length > 0) {
                   const mostRecentOrder = currentOrders[currentOrders.length - 1];
