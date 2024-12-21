@@ -73,6 +73,7 @@ export default function Allproducts() {
   href={`/product?id=${product.id}&data=${encodeURIComponent(
     JSON.stringify({
       ...product,
+      qty: 1,
       img: product.img.join(","), // Join the array into a single string
     })
   )}`}

@@ -208,13 +208,13 @@ export default function ProductDetails() {
           </button>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
+            className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
           >
             <FaShoppingCart className="mr-2" /> Add to Cart
           </button>
           <button
             onClick={handleBuyNow}
-            className="bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
+            className="bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center"
           >
             <FaDollarSign className="mr-2" /> Buy Now
           </button>

@@ -9,6 +9,7 @@ export default function Browse() {
 
   const handleBuyNowBtn = () => {
     router.push("/seeall");
+    window.location.href="/seeall";
   };
 
   return (
