@@ -15,9 +15,9 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (loading) {
-      document.title = "Loading Kadosh..."; // Update the title when loading
+      document.title = "Loading Shamayim..."; // Update the title when loading
     } else {
-      document.title = "Kadosh"; // Restore the title when loading is done
+      document.title = "Shamayim"; // Restore the title when loading is done
     }
   }, [loading]);
 
@@ -56,7 +56,7 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
 //           />
 //         </div>
 //         <p className="mt-4 text-lg font-semibold text-gray-700">
-//           Loading Kadosh...
+//           Loading Shamayim...
 //         </p>
 //       </div>
 //     );

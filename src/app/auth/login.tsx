@@ -21,7 +21,7 @@ export default function Login({ setIsLogin }: { setIsLogin: (isLogin: boolean) =
     if (loading) {
       document.title = "Loggin in...";
     } else {
-      document.title = "Login - Kadosh";
+      document.title = "Login - Shamayim";
     }
   }, [loading]);
 
@@ -137,12 +137,12 @@ export default function Login({ setIsLogin }: { setIsLogin: (isLogin: boolean) =
   style={{ backgroundImage: "url('/bgimg.png')" }}
 >
         <div>
-          <h1 className="text-4xl font-bold mb-4">Kadosh</h1>
+          <h1 className="text-4xl font-bold mb-4">Shamayim</h1>
           <p className="text-xl mb-8">Durable electronics</p>
         </div>
         <div className="space-y-4">
-          <p className="text-sm">Discover amazing deals, shop with ease, and elevate your office with Kadosh</p>
-          <p className="text-xs opacity-75">Join thousands of users who have already trusted Kadosh.</p>
+          <p className="text-sm">Discover amazing deals, shop with ease, and elevate your office with Shamayim</p>
+          <p className="text-xs opacity-75">Join thousands of users who have already trusted Shamayim.</p>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ export default function FooterNavbar() {
             </li>
             <li>
               <a href="/company" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-teal-500">
-                Kadosh Refund Policy
+                Shamayim Refund Policy
               </a>
             </li>
             <li>
@@ -99,7 +99,7 @@ export default function FooterNavbar() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Kadosh blogs</span>
+                <span>Shamayim blogs</span>
               </a>
             </li>
             <li>
@@ -167,7 +167,7 @@ export default function FooterNavbar() {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-3 text-base lg:text-lg">About Kadosh</h4>
+          <h4 className="font-bold mb-3 text-base lg:text-lg">About Shamayim</h4>
           <ul className="space-y-2">
             <li>
               <a
@@ -271,7 +271,7 @@ export default function FooterNavbar() {
       </div>
       <hr className="my-6 border-t border-gray-300" />
       <div className="text-center text-sm">
-        <p>&#169; Copyright 2024 | Kadosh ltd. All Rights Reserved.</p>
+        <p>&#169; Copyright 2025 | Shamayim ltd. All Rights Reserved.</p>
       </div>
     </footer>
   );

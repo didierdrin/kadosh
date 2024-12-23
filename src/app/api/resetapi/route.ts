@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
     // Email options
     const mailOptions = {
-      from: `"Kadosh Support" <${process.env.FROM_EMAIL || 'support@kadosh.com'}>`,
+      from: `"Shamayim Support" <${process.env.FROM_EMAIL || 'support@shamayim.com'}>`,
       to,
       subject: 'Reset Your Password',
       html,

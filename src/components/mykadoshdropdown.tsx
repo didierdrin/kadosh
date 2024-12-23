@@ -7,7 +7,7 @@ export default function MyKadoshDropdown() {
     <div className="relative group">
       <div className="flex items-center cursor-pointer">
         <a href="/" className="mx-3 text-gray-700 group-hover:text-teal-500">
-          My Kadosh
+          My Shama
         </a>
         <svg
           className="h-6 w-6 text-gray-400 group-hover:text-teal-500 transition-transform duration-200 ease-in-out transform group-hover:-rotate-180"

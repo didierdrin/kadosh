@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     // Email options
     const mailOptions = {
-      from: `"Kadosh Support" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`, // Sender address
+      from: `"Shamayim Support" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`, // Sender address
       to: to, // Receiver email address
       subject: 'Your Password Reset Verification Code',
       html: html, // HTML body content with the verification code

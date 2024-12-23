@@ -6,8 +6,8 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kadosh - Authentication",
-  description: "Login or register for Kadosh",
+  title: "Shamayim - Authentication",
+  description: "Login or register for Shamayim",
 };
 
 export default function AuthLayout({

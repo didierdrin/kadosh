@@ -33,7 +33,7 @@ export default function Signup({
     if (loading) {
       document.title = "Loading...";
     } else {
-      document.title = "Signup - Kadosh";
+      document.title = "Signup - Shamayim";
     }
   }, [loading]);
 
@@ -266,16 +266,16 @@ export default function Signup({
         style={{ backgroundImage: "url('/bgimg.png')" }}
       >
         <div>
-          <h1 className="text-4xl font-bold mb-4">Kadosh</h1>
+          <h1 className="text-4xl font-bold mb-4">Shamayim</h1>
           <p className="text-xl mb-8">Durable electronics</p>
         </div>
         <div className="space-y-4">
           <p className="text-lg">
             Discover amazing deals, shop with ease, and elevate your office with
-            Kadosh
+            Shamayim
           </p>
           <p className="text-sm opacity-75">
-            Join thousands of users who have already trusted Kadosh.
+            Join thousands of users who have already trusted Shamayim.
           </p>
         </div>
       </div>

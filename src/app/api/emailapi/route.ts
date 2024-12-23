@@ -23,9 +23,9 @@ export async function POST(req: Request) {
 
     // Email options
     const mailOptions = {
-      from: `"Kadosh" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`,
+      from: `"Shamayim" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`,
       to: to,
-      subject: 'Welcome to Kadosh',
+      subject: 'Welcome to Shamayim',
       html: html, // Send the compiled HTML template as a string
     };
 

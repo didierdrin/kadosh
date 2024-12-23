@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     // Email options
     const mailOptions = {
-      from: `"Kadosh" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`,
+      from: `"Shamayim" <${process.env.FROM_EMAIL || 'nsedidier@gmail.com'}>`,
       to: to,
       subject: 'Your Purchase Confirmation',
       html: html,

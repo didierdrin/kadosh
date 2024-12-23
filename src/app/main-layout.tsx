@@ -17,7 +17,7 @@ import MessageIconButton from  "@/components/messageiconbutton";
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kadosh - Rwanda's best electronics shop",
+  title: "Shamayim - Rwanda's best electronics shop",
   description: "Best computer shop in Rwanda",
 };
 

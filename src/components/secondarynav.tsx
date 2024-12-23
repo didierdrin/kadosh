@@ -28,7 +28,7 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   return (
     <span className="flex flex-row items-center justify-between px-5 h-[80px] bg-blue-50 text-black text-[15px]">
       <a href="/home" className="text-black text-[35px] font-bold">
-        Kadosh
+        Shamayim
       </a>
       <div className="hidden sm:flex items-center">
         <CategoryDropdown onCategorySelect={handleCategorySelect} />

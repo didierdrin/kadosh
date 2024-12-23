@@ -8,7 +8,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kadosh - About us",
+  title: "Shamayim - About us",
   description: "Best electronics store in Kigali",
 };
 

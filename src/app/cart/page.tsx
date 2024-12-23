@@ -21,7 +21,7 @@ export default function CartPage() {
       <div className="animate-pulse">
         <FaShoppingCart className="text-sky-600 animate-cart-scale" size={64} />
       </div>
-      <p className="mt-4 text-lg font-semibold text-gray-700">Loading Kadosh...</p>
+      <p className="mt-4 text-lg font-semibold text-gray-700">Loading Shamayim...</p>
     </div>}>
         <DynamicCartDetails />
       </Suspense>

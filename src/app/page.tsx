@@ -17,9 +17,9 @@ export default function Home() {
   // Dynamically update the document title based on loading status
   useEffect(() => {
     if (loading) {
-      document.title = 'Loading Kadosh...'; // Set the title during loading
+      document.title = 'Loading Shamayim...'; // Set the title during loading
     } else {
-      document.title = 'Kadosh'; // Restore the original title
+      document.title = 'Shamayim'; // Restore the original title
     }
   }, [loading]);
 

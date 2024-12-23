@@ -50,7 +50,7 @@ table {
                     If you did not request a password reset, please ignore this email.
                   </p>
                   <p style="color: #26081A; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: center;">
-                    Need help? Contact us at <a href="mailto:support@kadosh.com" style="color: #d06224;">support@kadosh.com</a>
+                    Need help? Contact us at <a href="mailto:support@shamayim.com" style="color: #d06224;">support@shamayim.com</a>
                   </p>
                 </td></tr>
               </table>

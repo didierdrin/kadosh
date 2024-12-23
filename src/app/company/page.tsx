@@ -10,7 +10,7 @@ export default function Company() {
       {/* Top Navigation Bar */}
       <nav className="bg-blue-600 text-white py-4 px-8 flex justify-between items-center">
         <div className="text-4xl font-bold">
-          <a href="/home" className="cursor-pointer">Kadosh</a>
+          <a href="/home" className="cursor-pointer">Shamayim</a>
         </div>
         <div className="space-x-6 text-lg">
           <a href="#company" className="hover:text-teal-400">
@@ -152,7 +152,7 @@ export default function Company() {
           <div className="w-1/2 p-8">
             <h2 className="text-2xl font-bold">Our Leaders</h2>
             <p className="mt-4">
-              Meet the visionaries who guide Kadosh to be a leader in sustainable commerce and innovation.
+              Meet the visionaries who guide Shamayim to be a leader in sustainable commerce and innovation.
             </p>
             <a href="#learn-more" className="mt-6 inline-block text-teal-600 hover:text-blue-600">
               Learn More
@@ -165,12 +165,12 @@ export default function Company() {
           {/* Add content for Overview, Our History, etc. below */}
           <h3 className="text-2xl font-bold mb-6">Overview</h3>
           <p className="leading-relaxed">
-            This section contains an overview of Kadosh&apos;s vision and mission...
+            This section contains an overview of Shamayim&apos;s vision and mission...
           </p>
 
           <h3 className="text-2xl font-bold mt-10 mb-6">Our History</h3>
           <p className="leading-relaxed">
-            Kadosh has a rich history of innovation and empowering communities around the world...
+            Shamayim has a rich history of innovation and empowering communities around the world...
           </p>
           {/* Add other tab sections as needed */}
         </section>

@@ -41,9 +41,9 @@ const SeeallContent = () => {
 
   useEffect(() => {
     if (loading) {
-      document.title = "Loading Kadosh...";
+      document.title = "Loading Shamayim...";
     } else {
-      document.title = "Kadosh";
+      document.title = "Shamayim";
     }
   }, [loading]);
 
