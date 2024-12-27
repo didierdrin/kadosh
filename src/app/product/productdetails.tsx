@@ -45,6 +45,7 @@ export default function ProductDetails() {
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           const userData = docSnap.data();
+          // setMainImage(product.img[0]);
           setIsInWatchlist(userData.watchlist?.some((item: Product) => item.id === product.id) || false);
         }
       }
@@ -144,35 +145,38 @@ export default function ProductDetails() {
   return (
     <div className="flex flex-wrap -mx-4">
       {/* Image section */}
-      <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        {/* Main image */}
-        <Image
-          src={mainImage}
-          alt={product.name}
-          width="1500"
-          height="1500"
-          className="w-full h-[500px] object-cover rounded-lg shadow-md"
-        />
+<div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+  {/* Main image */}
+  <Image
+    src={mainImage}
+    alt={product.name}
+    width="1500"
+    height="1500"
+    className="w-full h-[500px] object-cover rounded-lg shadow-md"
+  />
 
-        {/* Thumbnails */}
-        {product.img.length > 1 && (
-          <div className="flex space-x-2 mt-4">
-            {product.img.map((imgUrl, index) => (
-              <Image
-                key={index}
-                src={imgUrl}
-                height="500"
-                width="500"
-                alt={`${product.name}-${index}`}
-                className={`w-20 h-20 object-cover cursor-pointer rounded ${
-                  imgUrl === mainImage ? "border-2 border-blue-500" : "border"
-                }`}
-                onClick={() => handleThumbnailClick(imgUrl)}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+  {/* Thumbnails */}
+  {product.img.length > 1 && (
+    <div className="flex space-x-2 mt-4">
+      {product.img.map((imgUrl, index) => (
+        <Image
+          key={index}
+          src={imgUrl}
+          height="500"
+          width="500"
+          alt={`${product.name}-${index}`}
+          className={`w-20 h-20 object-cover cursor-pointer rounded ${
+            imgUrl === mainImage ? "border-2 border-blue-500" : "border"
+          }`}
+          onMouseEnter={() => setMainImage(imgUrl)} // Preview hovered image
+          onMouseLeave={() => setMainImage(product.img[0])} // Reset to default image
+        />
+      ))}
+    </div>
+  )}
+</div>
+
+
 
       {/* Product details section */}
       <div className="w-full md:w-1/2 px-4">
