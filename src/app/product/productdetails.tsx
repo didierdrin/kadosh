@@ -161,8 +161,8 @@ export default function ProductDetails() {
               <Image
                 key={index}
                 src={imgUrl}
-                height="20"
-                width="20"
+                height="500"
+                width="500"
                 alt={`${product.name}-${index}`}
                 className={`w-20 h-20 object-cover cursor-pointer rounded ${
                   imgUrl === mainImage ? "border-2 border-blue-500" : "border"

@@ -81,7 +81,7 @@ function OrdersAndReturnsPage() {
   }, [user]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="h-[300px] flex items-center justify-center">Loading...</div>;
   }
 
   // Determine which set of orders to display
@@ -103,8 +103,10 @@ function OrdersAndReturnsPage() {
 
   return (
     <div className="container mx-auto p-4">
+      <div className="flex justify-between">
       <h2 className="text-2xl font-bold mb-6">Orders & Returns</h2>
-
+      <a href="/purchasehistory" className="block  px-4 py-4 text-sm text-gray-700 hover:text-red-500 hover:underline" role="menuitem">Purchase History</a>
+      </div>
       {/* Tab Bar */}
       <div className="flex space-x-6 mb-6 border-b">
         <button
